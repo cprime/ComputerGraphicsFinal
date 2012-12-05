@@ -1,68 +1,68 @@
 //
-//  CNode.cpp
+//  Node.cpp
 //  Project
 //
 //  Created by Colden Prime on 12/2/12.
 //  Copyright (c) 2012 IntrepidPursuits. All rights reserved.
 //
 
-#include "CNode.h"
+#include "Node.h"
 
 #pragma mark - setters and getters
-GLfloat CNode::get_scaleX() {
+GLfloat Node::get_scaleX() {
     return this->scaleX;
 }
-void CNode::set_scaleX(GLfloat scaleX) {
+void Node::set_scaleX(GLfloat scaleX) {
     this->scaleX = scaleX;
 }
-GLfloat CNode::get_scaleY() {
+GLfloat Node::get_scaleY() {
     return this->scaleY;
 }
-void CNode::set_scaleY(GLfloat scaleY) {
+void Node::set_scaleY(GLfloat scaleY) {
     this->scaleY = scaleY;
 }
-GLfloat CNode::get_scaleZ() {
+GLfloat Node::get_scaleZ() {
     return this->scaleZ;
 }
-void CNode::set_scaleZ(GLfloat scaleZ) {
+void Node::set_scaleZ(GLfloat scaleZ) {
     this->scaleZ = scaleZ;
 }
 
-GLfloat CNode::get_scale() {
+GLfloat Node::get_scale() {
     return scaleX;
 }
-void CNode::set_scale(GLfloat scale) {
+void Node::set_scale(GLfloat scale) {
     this->scaleX = this->scaleY = this->scaleZ = scale;
 }
 
-CPoint CNode::get_position() {
+Point Node::get_position() {
     return this->position;
 }
-void CNode::set_position(CPoint position) {
+void Node::set_position(Point position) {
     this->position = position;
 }
 
-CNode * CNode::get_parent() {
+Node * Node::get_parent() {
     return this->parent;
 }
-vector<CNode *> * CNode::get_children() {
+vector<Node *> * Node::get_children() {
     return this->children;
 }
 
 #pragma mark - init
 
-CNode::CNode() {
+Node::Node() {
     this->scaleX = 1;
     this->scaleY = 1;
     this->scaleZ = 1;
     
-    this->position = CPointZero;
+    this->position = PointZero;
     
-    this->children = new vector<CNode *>();
+    this->children = new vector<Node *>();
     this->parent = NULL;
 }
 
-void CNode::addChild(CNode *node) {
+void Node::addChild(Node *node) {
     if(node) {
         if(find(this->children->begin(), this->children->end(), node) == this->children->end()) {
             this->children->push_back(node);
@@ -70,7 +70,7 @@ void CNode::addChild(CNode *node) {
         }
     }
 }
-void CNode::removeFromParent() {
+void Node::removeFromParent() {
     if(this->parent) {
         this->children->erase(remove(this->children->begin(), this->children->end(), this), this->children->end());
         this->parent = NULL;
@@ -78,8 +78,8 @@ void CNode::removeFromParent() {
 }
 
 #pragma mark - drawing
-void CNode::transform() {
-    if(!CPointEqualToPoint(this->position, CPointZero)) {
+void Node::transform() {
+    if(!PointEqualToPoint(this->position, PointZero)) {
         glTranslatef(this->position.x, this->position.y, this->position.z);
     }
     
@@ -88,22 +88,22 @@ void CNode::transform() {
     }
 }
 
-void CNode::draw() {
+void Node::draw() {
     //Override this method
 //    glColor3f(1.0f, 1.0f, 1.0f);
     glColor4f(1.0, 1.0, 1.0, 0.5);
     glutSolidCube(2.0f); // Plot Solid Objects
 }
 
-void CNode::visit() {
+void Node::visit() {
     glPushMatrix();
     
     this->transform();
     
     this->draw();
     
-    for(vector<CNode *>::iterator it = this->children->begin(); it != this->children->end(); ++it) {
-        CNode *node = *it;
+    for(vector<Node *>::iterator it = this->children->begin(); it != this->children->end(); ++it) {
+        Node *node = *it;
         node->visit();
     }
     

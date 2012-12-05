@@ -10,17 +10,17 @@
 #include <math.h>
 #include <stdlib.h>
 #include <GLUT/GLUT.h>
-#include "CPoint.h"
-#include "CNode.h"
+#include "Point.h"
+#include "Node.h"
 
-CNode *testObject;
+Node *testObject;
 
 /* Create display list with Torus and initialize state*/
 static void init(void) {
-    testObject = new CNode();
+    testObject = new Node();
     
-    CNode *child1 = new CNode();
-    child1->set_position(CPointMake(5, 5, 0));
+    Node *child1 = new Node();
+    child1->set_position(PointMake(5, 5, 0));
     child1->set_scale(.5);
     testObject->addChild(child1);
 }

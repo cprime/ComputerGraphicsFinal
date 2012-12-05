@@ -12,8 +12,8 @@
 		E682441F166812EA0081973B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441C166812EA0081973B /* GLKit.framework */; };
 		E6824420166812EA0081973B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441D166812EA0081973B /* GLUT.framework */; };
 		E6824421166812EA0081973B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441E166812EA0081973B /* OpenGL.framework */; };
-		E6E4221C166BC235007501B0 /* CNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6E4221A166BC235007501B0 /* CNode.cpp */; };
-		E6E42224166BF5C5007501B0 /* CPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6E42222166BF5C5007501B0 /* CPoint.cpp */; };
+		E6E4221C166BC235007501B0 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6E4221A166BC235007501B0 /* Node.cpp */; };
+		E6E42224166BF5C5007501B0 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6E42222166BF5C5007501B0 /* Point.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,10 +36,10 @@
 		E682441C166812EA0081973B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		E682441D166812EA0081973B /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		E682441E166812EA0081973B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		E6E4221A166BC235007501B0 /* CNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CNode.cpp; sourceTree = "<group>"; };
-		E6E4221B166BC235007501B0 /* CNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNode.h; sourceTree = "<group>"; };
-		E6E42222166BF5C5007501B0 /* CPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CPoint.cpp; sourceTree = "<group>"; };
-		E6E42223166BF5C5007501B0 /* CPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPoint.h; sourceTree = "<group>"; };
+		E6E4221A166BC235007501B0 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		E6E4221B166BC235007501B0 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		E6E42222166BF5C5007501B0 /* Point.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Point.cpp; sourceTree = "<group>"; };
+		E6E42223166BF5C5007501B0 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,10 +80,10 @@
 			children = (
 				E6824413166812A00081973B /* main.cpp */,
 				E6824415166812A00081973B /* Project.1 */,
-				E6E4221B166BC235007501B0 /* CNode.h */,
-				E6E4221A166BC235007501B0 /* CNode.cpp */,
-				E6E42223166BF5C5007501B0 /* CPoint.h */,
-				E6E42222166BF5C5007501B0 /* CPoint.cpp */,
+				E6E4221B166BC235007501B0 /* Node.h */,
+				E6E4221A166BC235007501B0 /* Node.cpp */,
+				E6E42223166BF5C5007501B0 /* Point.h */,
+				E6E42222166BF5C5007501B0 /* Point.cpp */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -140,8 +140,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6824414166812A00081973B /* main.cpp in Sources */,
-				E6E4221C166BC235007501B0 /* CNode.cpp in Sources */,
-				E6E42224166BF5C5007501B0 /* CPoint.cpp in Sources */,
+				E6E4221C166BC235007501B0 /* Node.cpp in Sources */,
+				E6E42224166BF5C5007501B0 /* Point.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
