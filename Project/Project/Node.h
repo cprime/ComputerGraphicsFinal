@@ -10,12 +10,13 @@
 #define __Project__Node__
 
 #import <GLUT/GLUT.h>
-#import "Point.h"
 #import <vector>
+#import "Point.h"
 
 using namespace std;
 
 class Node;
+class Action;
 
 class Node {
     
@@ -52,6 +53,11 @@ public:
     
     void addChild(Node *node);
     void removeFromParent();
+    
+    void runAction(Action *action);
+    void stopAllActions();
+    void stopAction(Action *action);
+    void stopActionWithTag(int tag);
 };
 
 #endif /* defined(__Project__Node__) */

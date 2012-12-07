@@ -9,6 +9,7 @@
 #include "Director.h"
 #import <GLUT/GLUT.h>
 #import <time.h>
+#import "ActionManager.h"
 
 Director * Director::m_pInstance = NULL;
 
@@ -63,7 +64,7 @@ Director::Director()
 void Director::update() {
     this->calculateDeltaTime();
     
-    //Tick Actions
+    ActionManager::SharedManager()->update(this->dt);
     
     glPushMatrix();
     

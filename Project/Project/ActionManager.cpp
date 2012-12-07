@@ -29,4 +29,23 @@ ActionManager & ActionManager::operator= (const ActionManager & other)
 
 ActionManager::ActionManager()
 {
+    this->targets = new vector<Node *, vector<Action *>>();
+}
+
+#pragma mark - running/stopping actions
+
+void ActionManager::update(float dt) {
+    
+}
+
+void ActionManager::addAction(Node *target, Action *action) {
+}
+void ActionManager::removeAllActions(Node *target) {
+    
+}
+void ActionManager::removeAction(Node *target, Action *action) {
+    
+}
+void ActionManager::removeActionWithTag(Node *node, int tag) {
+    
 }

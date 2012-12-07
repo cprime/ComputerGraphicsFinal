@@ -9,12 +9,23 @@
 #ifndef __Project__ActionManager__
 #define __Project__ActionManager__
 
-#include <vector>
+#import <vector>
+#import "Node.h"
+#import "Action.h"
 
 class ActionManager {
 public:
     static ActionManager *SharedManager();
+    
+    void update(float dt);
+    
+    void addAction(Node *target, Action *action);
+    void removeAllActions(Node *target);
+    void removeAction(Node *target, Action *action);
+    void removeActionWithTag(Node *node, int tag);
 private:
+    vector<Node *, vector<Action *>> *targets;
+    
     ActionManager();
     ActionManager(ActionManager const&);             // copy constructor is private
     ActionManager& operator=(ActionManager const&);  // assignment operator is private

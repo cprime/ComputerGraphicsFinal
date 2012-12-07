@@ -6,7 +6,9 @@
 //  Copyright (c) 2012 IntrepidPursuits. All rights reserved.
 //
 
-#include "Node.h"
+#import "Node.h"
+#import "Action.h"
+#import "ActionManager.h"
 
 #pragma mark - setters and getters
 GLfloat Node::get_scaleX() {
@@ -108,5 +110,20 @@ void Node::visit() {
     }
     
     glPopMatrix();
+}
+
+#pragma mark - action methods
+
+void Node::runAction(Action *action) {
+    ActionManager::SharedManager()->addAction(this, action);
+}
+void Node::stopAllActions() {
+    ActionManager::SharedManager()->removeAllActions(this);
+}
+void Node::stopAction(Action *action) {
+    ActionManager::SharedManager()->removeAction(this, action);
+}
+void Node::stopActionWithTag(int tag) {
+    ActionManager::SharedManager()->removeActionWithTag(this, tag);
 }
 
