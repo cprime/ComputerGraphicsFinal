@@ -24,7 +24,7 @@ public:
     void removeAction(Node *target, Action *action);
     void removeActionWithTag(Node *node, int tag);
 private:
-    vector<Node *, vector<Action *>> *targets;
+    std::vector<Node *> *targets;
     
     ActionManager();
     ActionManager(ActionManager const&);             // copy constructor is private

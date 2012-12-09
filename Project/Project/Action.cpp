@@ -10,6 +10,27 @@
 #import <iostream>
 #import "Node.h"
 
-void Action::update(float dt) {
+#define MIN(A,B) ((A < B) ? A : B)
+
+Action::Action(float duration) {
+    this->duration = duration;
+}
+
+void Action::startWithTarget(Node *node) {
+    this->target = node;
+}
+bool Action::isDone() {
+    return this->elapsed >= this->duration;
+}
+
+void Action::tick(float dt) {
     std::cout << "Delta time: " << dt << std::endl;
+    
+    this->elapsed += dt;
+    
+    this->update(MIN(this->elapsed / this->duration, 1));
+}
+
+void Action::update(float t) {
+    //override this method
 }

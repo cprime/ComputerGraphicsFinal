@@ -25,9 +25,12 @@ class Node {
     
     Node *parent;
     vector<Node *> *children;
+    vector<Action *> *actions;
     
-    void draw();
     void transform();
+    
+protected:
+    virtual void draw();
     
 public:
     GLfloat get_scaleX();
@@ -48,8 +51,12 @@ public:
     Node * get_parent();
     vector<Node *> * get_children();
     
+    vector<Action *> * get_actions();
+    void addAction(Action *);
+    void removeAction(Action *);
+    
     Node();
-    void visit();
+    virtual void visit();
     
     void addChild(Node *node);
     void removeFromParent();

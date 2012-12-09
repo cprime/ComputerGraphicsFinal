@@ -29,22 +29,41 @@ ActionManager & ActionManager::operator= (const ActionManager & other)
 
 ActionManager::ActionManager()
 {
-    this->targets = new vector<Node *, vector<Action *>>();
+    this->targets = new std::vector<Node *>();
 }
 
 #pragma mark - running/stopping actions
 
 void ActionManager::update(float dt) {
-    
+    //TODO tick all running actions
 }
 
 void ActionManager::addAction(Node *target, Action *action) {
+    std::vector<Node *>::iterator it = find(this->targets->begin(), this->targets->end(), target);
+    if(it == this->targets->end()) {
+        this->targets->push_back(target);
+    }
+    target->addAction(action);
+    action->startWithTarget(target);
 }
+
 void ActionManager::removeAllActions(Node *target) {
+    std::vector<Node *>::iterator it = find(this->targets->begin(), this->targets->end(), target);
+    if(it != this->targets->end()) {
+        target->get_actions()->clear();
+        this->targets->erase(it);
+    }
     
 }
 void ActionManager::removeAction(Node *target, Action *action) {
-    
+    std::vector<Node *>::iterator it = find(this->targets->begin(), this->targets->end(), target);
+    if(it != this->targets->end()) {
+        std::vector<Action *> *actions = target->get_actions();
+        
+        if(actions->empty()) {
+            this->targets->erase(it);
+        }
+    }
 }
 void ActionManager::removeActionWithTag(Node *node, int tag) {
     

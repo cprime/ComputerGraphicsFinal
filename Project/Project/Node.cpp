@@ -51,6 +51,19 @@ vector<Node *> * Node::get_children() {
     return this->children;
 }
 
+vector<Action *> * Node::get_actions() {
+    return this->actions;
+}
+void Node::addAction(Action *action) {
+    this->actions->push_back(action);
+}
+void Node::removeAction(Action *action) {
+    std::vector<Action *>::iterator it = find(this->actions->begin(), this->actions->end(), action);
+    if(it != this->actions->end()) {
+        this->actions->erase(it);
+    }
+}
+
 #pragma mark - init
 
 Node::Node() {
@@ -60,6 +73,7 @@ Node::Node() {
     
     this->position = PointZero;
     
+    this->actions = new vector<Action *>();
     this->children = new vector<Node *>();
     this->parent = NULL;
 }
@@ -92,9 +106,6 @@ void Node::transform() {
 
 void Node::draw() {
     //Override this method
-//    glColor3f(1.0f, 1.0f, 1.0f);
-    glColor4f(1.0, 1.0, 1.0, 0.5);
-    glutSolidCube(2.0f); // Plot Solid Objects
 }
 
 void Node::visit() {

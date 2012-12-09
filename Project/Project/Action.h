@@ -13,11 +13,19 @@ class Node;
 
 class Action {
 public:
-    void update(float dt);
+    Action(float duration);
+    
+    virtual void startWithTarget(Node *node);
+    virtual bool isDone();
+    
+    void tick(float dt);
+    virtual void update(float t);
     
     int tag;
+    float duration;
+    float elapsed;
+protected:
     Node *target;
-private:
 };
 
 #endif /* defined(__Project__Action__) */

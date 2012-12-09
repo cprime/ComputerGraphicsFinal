@@ -50,10 +50,10 @@ Director::Director()
 {
     this->keyboardHandler = new KeyboardHandler();
     
-    this->rootNode = new Node();
+    this->runningScene = new Scene();
     
 //    Node *testObject = new Node();
-//    this->rootNode->addChild(testObject);
+//    this->runningScene->addChild(testObject);
 //    
 //    Node *child1 = new Node();
 //    child1->set_position(PointMake(5, 5, 0));
@@ -68,7 +68,7 @@ void Director::update() {
     
     glPushMatrix();
     
-    this->rootNode->visit();
+    this->runningScene->visit();
     
     glPopMatrix();
 }

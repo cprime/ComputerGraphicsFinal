@@ -12,7 +12,7 @@
 #include <vector>
 #include "time.h"
 #import "KeyboardHandler.h"
-#import "Node.h"
+#import "Scene.h"
 
 class Director {
 public:
@@ -23,7 +23,7 @@ public:
     void update();
 private:
     KeyboardHandler *keyboardHandler;
-    Node *rootNode;
+    Scene *runningScene;
     
     float dt;
     clock_t lastUpdate;

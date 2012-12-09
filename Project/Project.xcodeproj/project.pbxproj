@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E600A5F11674FF420078C898 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5EF1674FF420078C898 /* Scene.cpp */; };
+		E600A5F7167534C10078C898 /* MoveToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5F5167534C10078C898 /* MoveToAction.cpp */; };
 		E647621C166FF8C5004765BC /* KeyboardHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E647621A166FF8C5004765BC /* KeyboardHandler.cpp */; };
 		E6476220167011EE004765BC /* ActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E647621E167011EE004765BC /* ActionManager.cpp */; };
 		E6824414166812A00081973B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6824413166812A00081973B /* main.cpp */; };
@@ -34,6 +36,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E600A5EF1674FF420078C898 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		E600A5F01674FF420078C898 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		E600A5F5167534C10078C898 /* MoveToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MoveToAction.cpp; sourceTree = "<group>"; };
+		E600A5F6167534C10078C898 /* MoveToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveToAction.h; sourceTree = "<group>"; };
 		E647621A166FF8C5004765BC /* KeyboardHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyboardHandler.cpp; sourceTree = "<group>"; };
 		E647621B166FF8C5004765BC /* KeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHandler.h; sourceTree = "<group>"; };
 		E647621E167011EE004765BC /* ActionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionManager.cpp; sourceTree = "<group>"; };
@@ -68,6 +74,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E600A5ED1674FF270078C898 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				E6E4221B166BC235007501B0 /* Node.h */,
+				E6E4221A166BC235007501B0 /* Node.cpp */,
+				E600A5F01674FF420078C898 /* Scene.h */,
+				E600A5EF1674FF420078C898 /* Scene.cpp */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
 		E6476221167012DB004765BC /* Actions */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +92,8 @@
 				E647621E167011EE004765BC /* ActionManager.cpp */,
 				E6B5A7001671585E00C2FA7C /* Action.h */,
 				E6B5A6FF1671585E00C2FA7C /* Action.cpp */,
+				E600A5F6167534C10078C898 /* MoveToAction.h */,
+				E600A5F5167534C10078C898 /* MoveToAction.cpp */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -103,14 +122,13 @@
 			children = (
 				E6824413166812A00081973B /* main.cpp */,
 				E6824415166812A00081973B /* Project.1 */,
-				E6E4221B166BC235007501B0 /* Node.h */,
-				E6E4221A166BC235007501B0 /* Node.cpp */,
 				E6E42223166BF5C5007501B0 /* Point.h */,
 				E6E42222166BF5C5007501B0 /* Point.cpp */,
 				E68EAF30166ECFBF00258D6E /* Director.h */,
 				E68EAF2F166ECFBF00258D6E /* Director.cpp */,
 				E647621B166FF8C5004765BC /* KeyboardHandler.h */,
 				E647621A166FF8C5004765BC /* KeyboardHandler.cpp */,
+				E600A5ED1674FF270078C898 /* Nodes */,
 				E6476221167012DB004765BC /* Actions */,
 			);
 			path = Project;
@@ -174,6 +192,8 @@
 				E647621C166FF8C5004765BC /* KeyboardHandler.cpp in Sources */,
 				E6476220167011EE004765BC /* ActionManager.cpp in Sources */,
 				E6B5A7011671585E00C2FA7C /* Action.cpp in Sources */,
+				E600A5F11674FF420078C898 /* Scene.cpp in Sources */,
+				E600A5F7167534C10078C898 /* MoveToAction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
