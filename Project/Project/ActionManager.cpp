@@ -35,7 +35,23 @@ ActionManager::ActionManager()
 #pragma mark - running/stopping actions
 
 void ActionManager::update(float dt) {
-    //TODO tick all running actions
+    for(std::vector<Node *>::iterator it = this->targets->begin(); it != this->targets->end(); ++it) {
+        Node *node = *it;
+        vector<Action *> *actions = node->get_actions();
+        
+        std::vector<Action *>::iterator actionIt = actions->begin();
+        for(; actionIt != actions->end(); ) {
+            Action *action = *actionIt;
+            action->tick(dt);
+            
+            if(action->isDone()) {
+                actions->erase(actionIt);
+                printf("done...\n");
+            } else {
+                ++actionIt;
+            }
+        }
+    }
 }
 
 void ActionManager::addAction(Node *target, Action *action) {

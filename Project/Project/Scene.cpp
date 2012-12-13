@@ -8,16 +8,12 @@
 
 #include "Scene.h"
 
-Scene::Scene() : Node::Node() {
+Scene::Scene() : Node() {
     
 }
 
-void Scene::draw() {
-    Node::draw();
+void Scene::onEnter() {
     
-    //Override this method
-    glColor3f(1.0f, 1.0f, 1.0f);
-    glutWireCube(2.0f); // Plot Solid Objects
 }
 
 void Scene::keyPressed(char key) {

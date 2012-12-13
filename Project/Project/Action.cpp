@@ -11,26 +11,33 @@
 #import "Node.h"
 
 #define MIN(A,B) ((A < B) ? A : B)
+#define MAX(A,B) ((A > B) ? A : B)
 
 Action::Action(float duration) {
     this->duration = duration;
+    this->isFinished = false;
 }
 
 void Action::startWithTarget(Node *node) {
     this->target = node;
 }
 bool Action::isDone() {
-    return this->elapsed >= this->duration;
+    return this->elapsed >= this->duration || this->isFinished;
 }
 
 void Action::tick(float dt) {
-    std::cout << "Delta time: " << dt << std::endl;
-    
     this->elapsed += dt;
+    float t = MIN(MAX(this->elapsed / this->duration, 0), 1);
     
-    this->update(MIN(this->elapsed / this->duration, 1));
+//    std::cout << "Delta time: " << dt << std::endl;
+//    std::cout << "Total time: " << this->elapsed << std::endl;
+//    std::cout << "T: " << t << std::endl;
+    
+    this->update(t);
 }
 
 void Action::update(float t) {
+    if(t >= 1)
+        this->isFinished = true;
     //override this method
 }

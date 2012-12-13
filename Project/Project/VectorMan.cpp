@@ -7,3 +7,15 @@
 //
 
 #include "VectorMan.h"
+
+VectorMan::VectorMan() : Node() {
+    
+}
+
+void VectorMan::draw() {
+    Node::draw();
+    
+    //Override this method
+    glColor3f(1.0f, 1.0f, 1.0f);
+    glutWireCube(2.0f); // Plot Solid Objects
+}

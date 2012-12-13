@@ -22,6 +22,10 @@ void MoveToAction::startWithTarget(Node *node) {
 }
 
 void MoveToAction::update(float t) {
+    Action::update(t);
+    
     Point newPosition = PointAdd(this->origin, PointMake(this->delta.x * t, this->delta.y * t, this->delta.z * t));
+    
     this->target->set_position(newPosition);
+    printf("move: %f\n", t);
 }

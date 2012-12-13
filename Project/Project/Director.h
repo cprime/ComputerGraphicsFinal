@@ -11,6 +11,7 @@
 
 #include <vector>
 #include "time.h"
+#import <sys/time.h>
 #import "KeyboardHandler.h"
 #import "Scene.h"
 
@@ -20,13 +21,15 @@ public:
     
     KeyboardHandler * get_keyboardHandler();
     
+    void runScene(Scene *scene);
     void update();
 private:
     KeyboardHandler *keyboardHandler;
     Scene *runningScene;
     
+    bool isFirstTick;
     float dt;
-    clock_t lastUpdate;
+    struct timeval lastUpdate;
     
     Director();
     Director(Director const&);             // copy constructor is private

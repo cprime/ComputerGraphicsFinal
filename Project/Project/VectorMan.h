@@ -9,6 +9,12 @@
 #ifndef __Project__VectorMan__
 #define __Project__VectorMan__
 
-#include <iostream>
+#include "Node.h"
+
+class VectorMan : public Node {
+public:
+    VectorMan();
+    void draw();
+};
 
 #endif /* defined(__Project__VectorMan__) */

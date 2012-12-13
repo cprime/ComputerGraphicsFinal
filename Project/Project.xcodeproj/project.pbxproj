@@ -17,6 +17,11 @@
 		E6824420166812EA0081973B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441D166812EA0081973B /* GLUT.framework */; };
 		E6824421166812EA0081973B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441E166812EA0081973B /* OpenGL.framework */; };
 		E68EAF31166ECFBF00258D6E /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E68EAF2F166ECFBF00258D6E /* Director.cpp */; };
+		E69315C41676AC52003F1EF5 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C21676AC52003F1EF5 /* TestScene.cpp */; };
+		E69315C81676AD2D003F1EF5 /* VectorMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C61676AD2D003F1EF5 /* VectorMan.cpp */; };
+		E69315CB1676C37E003F1EF5 /* ScaleToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C91676C37E003F1EF5 /* ScaleToAction.cpp */; };
+		E693F7AC167969CD005DBE7F /* SpawnAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E693F7AA167969CD005DBE7F /* SpawnAction.cpp */; };
+		E6A01F301677FFF500677105 /* SequenceAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6A01F2E1677FFF500677105 /* SequenceAction.cpp */; };
 		E6B5A7011671585E00C2FA7C /* Action.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6B5A6FF1671585E00C2FA7C /* Action.cpp */; };
 		E6E4221C166BC235007501B0 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6E4221A166BC235007501B0 /* Node.cpp */; };
 		E6E42224166BF5C5007501B0 /* Point.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6E42222166BF5C5007501B0 /* Point.cpp */; };
@@ -52,6 +57,16 @@
 		E682441E166812EA0081973B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		E68EAF2F166ECFBF00258D6E /* Director.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Director.cpp; sourceTree = "<group>"; };
 		E68EAF30166ECFBF00258D6E /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
+		E69315C21676AC52003F1EF5 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene.cpp; sourceTree = "<group>"; };
+		E69315C31676AC52003F1EF5 /* TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScene.h; sourceTree = "<group>"; };
+		E69315C61676AD2D003F1EF5 /* VectorMan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorMan.cpp; sourceTree = "<group>"; };
+		E69315C71676AD2D003F1EF5 /* VectorMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorMan.h; sourceTree = "<group>"; };
+		E69315C91676C37E003F1EF5 /* ScaleToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScaleToAction.cpp; sourceTree = "<group>"; };
+		E69315CA1676C37E003F1EF5 /* ScaleToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleToAction.h; sourceTree = "<group>"; };
+		E693F7AA167969CD005DBE7F /* SpawnAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpawnAction.cpp; sourceTree = "<group>"; };
+		E693F7AB167969CD005DBE7F /* SpawnAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpawnAction.h; sourceTree = "<group>"; };
+		E6A01F2E1677FFF500677105 /* SequenceAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SequenceAction.cpp; sourceTree = "<group>"; };
+		E6A01F2F1677FFF500677105 /* SequenceAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceAction.h; sourceTree = "<group>"; };
 		E6B5A6FF1671585E00C2FA7C /* Action.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Action.cpp; sourceTree = "<group>"; };
 		E6B5A7001671585E00C2FA7C /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
 		E6E4221A166BC235007501B0 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
@@ -81,6 +96,8 @@
 				E6E4221A166BC235007501B0 /* Node.cpp */,
 				E600A5F01674FF420078C898 /* Scene.h */,
 				E600A5EF1674FF420078C898 /* Scene.cpp */,
+				E69315C71676AD2D003F1EF5 /* VectorMan.h */,
+				E69315C61676AD2D003F1EF5 /* VectorMan.cpp */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -94,6 +111,12 @@
 				E6B5A6FF1671585E00C2FA7C /* Action.cpp */,
 				E600A5F6167534C10078C898 /* MoveToAction.h */,
 				E600A5F5167534C10078C898 /* MoveToAction.cpp */,
+				E69315CA1676C37E003F1EF5 /* ScaleToAction.h */,
+				E69315C91676C37E003F1EF5 /* ScaleToAction.cpp */,
+				E6A01F2F1677FFF500677105 /* SequenceAction.h */,
+				E6A01F2E1677FFF500677105 /* SequenceAction.cpp */,
+				E693F7AB167969CD005DBE7F /* SpawnAction.h */,
+				E693F7AA167969CD005DBE7F /* SpawnAction.cpp */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -120,8 +143,6 @@
 		E6824412166812A00081973B /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				E6824413166812A00081973B /* main.cpp */,
-				E6824415166812A00081973B /* Project.1 */,
 				E6E42223166BF5C5007501B0 /* Point.h */,
 				E6E42222166BF5C5007501B0 /* Point.cpp */,
 				E68EAF30166ECFBF00258D6E /* Director.h */,
@@ -130,6 +151,10 @@
 				E647621A166FF8C5004765BC /* KeyboardHandler.cpp */,
 				E600A5ED1674FF270078C898 /* Nodes */,
 				E6476221167012DB004765BC /* Actions */,
+				E69315C31676AC52003F1EF5 /* TestScene.h */,
+				E69315C21676AC52003F1EF5 /* TestScene.cpp */,
+				E6824413166812A00081973B /* main.cpp */,
+				E6824415166812A00081973B /* Project.1 */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -194,6 +219,11 @@
 				E6B5A7011671585E00C2FA7C /* Action.cpp in Sources */,
 				E600A5F11674FF420078C898 /* Scene.cpp in Sources */,
 				E600A5F7167534C10078C898 /* MoveToAction.cpp in Sources */,
+				E69315C41676AC52003F1EF5 /* TestScene.cpp in Sources */,
+				E69315C81676AD2D003F1EF5 /* VectorMan.cpp in Sources */,
+				E69315CB1676C37E003F1EF5 /* ScaleToAction.cpp in Sources */,
+				E6A01F301677FFF500677105 /* SequenceAction.cpp in Sources */,
+				E693F7AC167969CD005DBE7F /* SpawnAction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

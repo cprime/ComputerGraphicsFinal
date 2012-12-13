@@ -8,6 +8,7 @@
 
 #include <GLUT/GLUT.h>
 #import "Director.h"
+#import "TestScene.h"
 
 void display(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clear the window
@@ -64,8 +65,10 @@ int main(int argc, char **argv) {
 	glMaterialfv(GL_FRONT, GL_SHININESS, mat_shininess); // set material properties
 	
 	glClearColor (0.0, 0.0, 0.0, 0.0);
-	
-	
+    
+    TestScene *scene = new TestScene();
+	Director::SharedDirector()->runScene(scene);
+    
 	glutMainLoop();
 	return 0;
     

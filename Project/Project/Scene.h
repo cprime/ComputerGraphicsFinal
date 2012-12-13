@@ -13,10 +13,11 @@
 
 class Scene : public Node {
 protected:
-    void draw();
     void keyPressed(char key);
 public:
     Scene();
+    
+    virtual void onEnter();
 };
 
 #endif /* defined(__Project__Scene__) */
