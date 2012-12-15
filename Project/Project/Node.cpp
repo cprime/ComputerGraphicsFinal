@@ -63,6 +63,12 @@ Point Node::get_position() {
 void Node::set_position(Point position) {
     this->position = position;
 }
+Color Node::get_color() {
+    return this->color;
+}
+void Node::set_color(Color color) {
+    this->color = color;
+}
 
 Node * Node::get_parent() {
     return this->parent;
@@ -96,6 +102,7 @@ Node::Node() {
     this->scaleZ = 1;
     
     this->position = PointZero;
+    this->color = ColorWhite;
     
     this->actions = new vector<Action *>();
     this->children = new vector<Node *>();
@@ -119,14 +126,15 @@ void Node::removeFromParent() {
 
 #pragma mark - drawing
 void Node::transform() {
+    
+    if(!PointEqualToPoint(this->position, PointZero)) {
+        glTranslatef(this->position.x, this->position.y, this->position.z);
+    }
+    
     if(this->angleX != 0 || this->angleY != 0 || this->angleZ != 0) {
         glRotatef(this->angleX, 1.0, 0.0, 0.0);
         glRotatef(this->angleY, 0.0, 1.0, 0.0);
         glRotatef(this->angleZ, 0.0, 0.0, 1.0);
-    }
-    
-    if(!PointEqualToPoint(this->position, PointZero)) {
-        glTranslatef(this->position.x, this->position.y, this->position.z);
     }
     
     if(this->scaleX != 1 || this->scaleY != 1 || this->scaleZ != 1) {
@@ -140,6 +148,7 @@ void Node::draw() {
 
 void Node::visit() {
     glPushMatrix();
+    glColor3f(this->color.r, this->color.g, this->color.b);
     
     this->transform();
     
@@ -150,6 +159,7 @@ void Node::visit() {
         node->visit();
     }
     
+    glColor3f(ColorWhite.r, ColorWhite.g, ColorWhite.b);
     glPopMatrix();
 }
 

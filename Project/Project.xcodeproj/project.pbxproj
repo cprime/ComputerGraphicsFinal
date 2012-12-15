@@ -10,6 +10,10 @@
 		E600A5F11674FF420078C898 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5EF1674FF420078C898 /* Scene.cpp */; };
 		E600A5F7167534C10078C898 /* MoveToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5F5167534C10078C898 /* MoveToAction.cpp */; };
 		E644D9F4167CEA0D00FDA83D /* RotateToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9F2167CEA0D00FDA83D /* RotateToAction.cpp */; };
+		E644D9F8167CEFF600FDA83D /* NodeCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9F6167CEFF600FDA83D /* NodeCube.cpp */; };
+		E644D9FB167CF53700FDA83D /* ArmNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9F9167CF53700FDA83D /* ArmNode.cpp */; };
+		E644D9FE167CFF3D00FDA83D /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9FC167CFF3C00FDA83D /* Color.cpp */; };
+		E644DA01167D0EEE00FDA83D /* Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9FF167D0EED00FDA83D /* Size.cpp */; };
 		E647621C166FF8C5004765BC /* KeyboardHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E647621A166FF8C5004765BC /* KeyboardHandler.cpp */; };
 		E6476220167011EE004765BC /* ActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E647621E167011EE004765BC /* ActionManager.cpp */; };
 		E654C078167A80FB00E867AE /* CallFuncAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E654C076167A80FA00E867AE /* CallFuncAction.cpp */; };
@@ -49,6 +53,14 @@
 		E600A5F6167534C10078C898 /* MoveToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveToAction.h; sourceTree = "<group>"; };
 		E644D9F2167CEA0D00FDA83D /* RotateToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RotateToAction.cpp; sourceTree = "<group>"; };
 		E644D9F3167CEA0D00FDA83D /* RotateToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateToAction.h; sourceTree = "<group>"; };
+		E644D9F6167CEFF600FDA83D /* NodeCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeCube.cpp; sourceTree = "<group>"; };
+		E644D9F7167CEFF600FDA83D /* NodeCube.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NodeCube.h; sourceTree = "<group>"; };
+		E644D9F9167CF53700FDA83D /* ArmNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArmNode.cpp; sourceTree = "<group>"; };
+		E644D9FA167CF53700FDA83D /* ArmNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArmNode.h; sourceTree = "<group>"; };
+		E644D9FC167CFF3C00FDA83D /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
+		E644D9FD167CFF3D00FDA83D /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		E644D9FF167D0EED00FDA83D /* Size.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Size.cpp; sourceTree = "<group>"; };
+		E644DA00167D0EEE00FDA83D /* Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Size.h; sourceTree = "<group>"; };
 		E647621A166FF8C5004765BC /* KeyboardHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyboardHandler.cpp; sourceTree = "<group>"; };
 		E647621B166FF8C5004765BC /* KeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHandler.h; sourceTree = "<group>"; };
 		E647621E167011EE004765BC /* ActionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionManager.cpp; sourceTree = "<group>"; };
@@ -100,12 +112,23 @@
 			children = (
 				E6E4221B166BC235007501B0 /* Node.h */,
 				E6E4221A166BC235007501B0 /* Node.cpp */,
+				E644D9F7167CEFF600FDA83D /* NodeCube.h */,
+				E644D9F6167CEFF600FDA83D /* NodeCube.cpp */,
 				E600A5F01674FF420078C898 /* Scene.h */,
 				E600A5EF1674FF420078C898 /* Scene.cpp */,
-				E69315C71676AD2D003F1EF5 /* VectorMan.h */,
-				E69315C61676AD2D003F1EF5 /* VectorMan.cpp */,
 			);
 			name = Nodes;
+			sourceTree = "<group>";
+		};
+		E644D9F5167CED7100FDA83D /* VectorMan */ = {
+			isa = PBXGroup;
+			children = (
+				E69315C71676AD2D003F1EF5 /* VectorMan.h */,
+				E69315C61676AD2D003F1EF5 /* VectorMan.cpp */,
+				E644D9FA167CF53700FDA83D /* ArmNode.h */,
+				E644D9F9167CF53700FDA83D /* ArmNode.cpp */,
+			);
+			name = VectorMan;
 			sourceTree = "<group>";
 		};
 		E6476221167012DB004765BC /* Actions */ = {
@@ -155,12 +178,17 @@
 			children = (
 				E6E42223166BF5C5007501B0 /* Point.h */,
 				E6E42222166BF5C5007501B0 /* Point.cpp */,
+				E644DA00167D0EEE00FDA83D /* Size.h */,
+				E644D9FF167D0EED00FDA83D /* Size.cpp */,
+				E644D9FD167CFF3D00FDA83D /* Color.h */,
+				E644D9FC167CFF3C00FDA83D /* Color.cpp */,
 				E68EAF30166ECFBF00258D6E /* Director.h */,
 				E68EAF2F166ECFBF00258D6E /* Director.cpp */,
 				E647621B166FF8C5004765BC /* KeyboardHandler.h */,
 				E647621A166FF8C5004765BC /* KeyboardHandler.cpp */,
 				E600A5ED1674FF270078C898 /* Nodes */,
 				E6476221167012DB004765BC /* Actions */,
+				E644D9F5167CED7100FDA83D /* VectorMan */,
 				E69315C31676AC52003F1EF5 /* TestScene.h */,
 				E69315C21676AC52003F1EF5 /* TestScene.cpp */,
 				E6824413166812A00081973B /* main.cpp */,
@@ -236,6 +264,10 @@
 				E693F7AC167969CD005DBE7F /* SpawnAction.cpp in Sources */,
 				E654C078167A80FB00E867AE /* CallFuncAction.cpp in Sources */,
 				E644D9F4167CEA0D00FDA83D /* RotateToAction.cpp in Sources */,
+				E644D9F8167CEFF600FDA83D /* NodeCube.cpp in Sources */,
+				E644D9FB167CF53700FDA83D /* ArmNode.cpp in Sources */,
+				E644D9FE167CFF3D00FDA83D /* Color.cpp in Sources */,
+				E644DA01167D0EEE00FDA83D /* Size.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

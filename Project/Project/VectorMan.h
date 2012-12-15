@@ -10,11 +10,21 @@
 #define __Project__VectorMan__
 
 #include "Node.h"
+#import "NodeCube.h"
+#import "ArmNode.h"
 
 class VectorMan : public Node {
+    NodeCube *torso;
+    NodeCube *head;
+    NodeCube *leftArm;
+    NodeCube *rightArm;
+    NodeCube *leftLeg;
+    NodeCube *rightLeg;
 public:
     VectorMan();
     void draw();
+    
+    void startWalkAnimation();
 };
 
 #endif /* defined(__Project__VectorMan__) */

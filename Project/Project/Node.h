@@ -12,6 +12,7 @@
 #import <GLUT/GLUT.h>
 #import <vector>
 #import "Point.h"
+#include "Color.h"
 
 using namespace std;
 
@@ -19,10 +20,10 @@ class Node;
 class Action;
 
 class Node {
-    
     GLfloat angleX, angleY, angleZ;
     GLfloat scaleX, scaleY, scaleZ;
     Point position;
+    Color color;
     
     Node *parent;
     vector<Node *> *children;
@@ -57,6 +58,9 @@ public:
     
     Point get_position();
     void set_position(Point position);
+    
+    Color get_color();
+    void set_color(Color color);
     
     Node * get_parent();
     vector<Node *> * get_children();
