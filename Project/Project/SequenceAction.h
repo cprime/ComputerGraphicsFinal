@@ -16,6 +16,7 @@ class SequenceAction : public Action {
     std::vector<Action *> *actions;
     int current;
     float finishedElapsed;
+    bool currentStarted;
 
 public:
     SequenceAction(std::vector<Action *> *actions);

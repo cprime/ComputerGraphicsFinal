@@ -26,6 +26,7 @@ public:
     ScaleToAction(float duration, float destination);
     ScaleToAction(float duration, float destinationX, float destinationY, float destinationZ);
     void startWithTarget(Node *node);
+    void finish();
     void update(float t);
 };
 

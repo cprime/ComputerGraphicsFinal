@@ -19,6 +19,7 @@ class MoveToAction : public Action {
 public:
     MoveToAction(float duration, Point destination);
     void startWithTarget(Node *node);
+    void finish();
     void update(float t);
 };
 

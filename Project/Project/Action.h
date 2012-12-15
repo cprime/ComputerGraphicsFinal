@@ -19,6 +19,7 @@ public:
     Action(float duration);
     
     virtual void startWithTarget(Node *node);
+    virtual void finish();
     virtual bool isDone();
     bool isFinished;
     

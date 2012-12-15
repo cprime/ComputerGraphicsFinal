@@ -21,6 +21,9 @@ Action::Action(float duration) {
 void Action::startWithTarget(Node *node) {
     this->target = node;
 }
+void Action::finish() {
+    this->isFinished = true;
+}
 bool Action::isDone() {
     return this->elapsed >= this->duration || this->isFinished;
 }

@@ -27,14 +27,7 @@ void SequenceAction::startWithTarget(Node *node) {
     Action::startWithTarget(node);
     this->current = 0;
     this->finishedElapsed = 0;
-    
-    if(!this->actions->empty()) {
-        std::vector<Action *>::iterator actionIt = actions->begin();
-        for(; actionIt != actions->end(); ++actionIt) {
-            Action *action = *actionIt;
-            action->startWithTarget(node);
-        }
-    }
+    this->currentStarted = false;
 }
 
 void SequenceAction::update(float t) {
@@ -42,16 +35,21 @@ void SequenceAction::update(float t) {
 
         for( ; this->current != this->actions->size(); ) {
             Action *action = this->actions->at(this->current);
+            if(!this->currentStarted) {
+                action->startWithTarget(this->target);
+                this->currentStarted = true;
+            }
             
-            float offsetT = MIN(MAX((this->elapsed - this->finishedElapsed) / (this->duration - this->finishedElapsed), 0), 1);
-            float scaledT = MIN(MAX((offsetT / (action->duration / this->duration)), 0), 1);
-//            printf("%f , %f\n", offsetT, scaledT);
-            action->update(scaledT);
+            float offsetT = (this->elapsed - this->finishedElapsed) / (this->duration - this->finishedElapsed);
+            float scaledT = (offsetT / (action->duration / (this->duration - this->finishedElapsed)));
+            float fixedT = MAX(MIN(scaledT, 1), 0);
+            action->update(fixedT);
             
             if(action->isFinished) {
-                printf("next\n");
+                action->finish();
                 this->finishedElapsed += action->duration;
                 this->current++;
+                this->currentStarted = false;
                 continue;
             } else {
                 break;
