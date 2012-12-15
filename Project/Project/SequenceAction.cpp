@@ -8,19 +8,21 @@
 
 #include "SequenceAction.h"
 
-SequenceAction::SequenceAction(std::vector<Action *> *actions) : Action(0) {
-    this->actions = actions;
-    
+float combinedDuration(std::vector<Action *> *actions) {
     float runningDuration = 0;
     
     std::vector<Action *>::iterator actionIt = actions->begin();
     for(; actionIt != actions->end(); ++actionIt) {
         Action *action = *actionIt;
         
-        runningDuration += action->duration;
+        runningDuration += action->get_duration();
     }
     
-    this->duration = runningDuration;
+    return runningDuration;
+}
+
+SequenceAction::SequenceAction(std::vector<Action *> *actions) : Action(combinedDuration(actions)) {
+    this->actions = actions;
 }
 
 void SequenceAction::startWithTarget(Node *node) {
@@ -36,18 +38,18 @@ void SequenceAction::update(float t) {
         for( ; this->current != this->actions->size(); ) {
             Action *action = this->actions->at(this->current);
             if(!this->currentStarted) {
-                action->startWithTarget(this->target);
+                action->startWithTarget(this->get_target());
                 this->currentStarted = true;
             }
             
-            float offsetT = (this->elapsed - this->finishedElapsed) / (this->duration - this->finishedElapsed);
-            float scaledT = (offsetT / (action->duration / (this->duration - this->finishedElapsed)));
+            float offsetT = (this->get_elapsed() - this->finishedElapsed) / (this->get_duration() - this->finishedElapsed);
+            float scaledT = (offsetT / (action->get_duration() / (this->get_duration() - this->finishedElapsed)));
             float fixedT = MAX(MIN(scaledT, 1), 0);
             action->update(fixedT);
             
-            if(action->isFinished) {
+            if(action->isFinished()) {
                 action->finish();
-                this->finishedElapsed += action->duration;
+                this->finishedElapsed += action->get_duration();
                 this->current++;
                 this->currentStarted = false;
                 continue;
@@ -57,3 +59,4 @@ void SequenceAction::update(float t) {
         }
     }
 }
+

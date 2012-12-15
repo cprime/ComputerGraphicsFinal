@@ -12,8 +12,7 @@
 #import "Node.h"
 
 class Scene : public Node {
-protected:
-    void keyPressed(char key);
+    virtual void keyPressed(char key);
 public:
     Scene();
     

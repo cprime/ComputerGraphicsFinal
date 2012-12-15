@@ -42,9 +42,9 @@ void ActionManager::update(float dt) {
         std::vector<Action *>::iterator actionIt = actions->begin();
         for(; actionIt != actions->end(); ) {
             Action *action = *actionIt;
-            action->tick(dt);
+            action->step(dt);
             
-            if(action->isDone()) {
+            if(action->isFinished()) {
                 actions->erase(actionIt);
                 printf("done...\n");
             } else {

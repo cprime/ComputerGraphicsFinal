@@ -8,21 +8,23 @@
 
 #include "SpawnAction.h"
 
-SpawnAction::SpawnAction(std::vector<Action *> *actions) : Action(0) {
-    this->actions = actions;
-    
+float maxDuration(std::vector<Action *> *actions) {
     float longest = 0;
     
     std::vector<Action *>::iterator actionIt = actions->begin();
     for(; actionIt != actions->end(); ++actionIt) {
         Action *action = *actionIt;
         
-        if(longest < action->duration) {
-            longest = action->duration;
+        if(longest < action->get_duration()) {
+            longest = action->get_duration();
         }
     }
     
-    this->duration = longest;
+    return longest;
+}
+
+SpawnAction::SpawnAction(std::vector<Action *> *actions) : Action(maxDuration(actions)) {
+    this->actions = actions;
 }
 
 void SpawnAction::startWithTarget(Node *node) {
@@ -41,8 +43,8 @@ void SpawnAction::update(float t) {
     for( ; actionIt != actions->end(); ++actionIt) {
         Action *action = *actionIt;
         
-        if(!action->isFinished) {
-            float localT = MIN(MAX((this->duration * t) / action->duration, 0), 1);
+        if(!action->isFinished()) {
+            float localT = MIN(MAX((this->get_duration() * t) / action->get_duration(), 0), 1);
             action->update(localT);
         }
     }

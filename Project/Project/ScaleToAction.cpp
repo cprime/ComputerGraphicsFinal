@@ -33,15 +33,15 @@ void ScaleToAction::startWithTarget(Node *node) {
 }
 void ScaleToAction::finish() {
     Action::finish();
-    this->target->set_scaleX(this->destinationX);
-    this->target->set_scaleY(this->destinationY);
-    this->target->set_scaleZ(this->destinationZ);
+    this->get_target()->set_scaleX(this->destinationX);
+    this->get_target()->set_scaleY(this->destinationY);
+    this->get_target()->set_scaleZ(this->destinationZ);
 }
 
 void ScaleToAction::update(float t) {
     Action::update(t);
     
-    this->target->set_scaleX(this->originX + (this->deltaX * t));
-    this->target->set_scaleY(this->originY + (this->deltaY * t));
-    this->target->set_scaleZ(this->originZ + (this->deltaZ * t));
+    this->get_target()->set_scaleX(this->originX + (this->deltaX * t));
+    this->get_target()->set_scaleY(this->originY + (this->deltaY * t));
+    this->get_target()->set_scaleZ(this->originZ + (this->deltaZ * t));
 }

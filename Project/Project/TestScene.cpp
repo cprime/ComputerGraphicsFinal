@@ -12,6 +12,15 @@
 #import "ScaleToAction.h"
 #import "SpawnAction.h"
 #import "SequenceAction.h"
+#import "CallFuncAction.h"
+
+void halfWay() {
+    printf("HALF WAY!!!\n");
+}
+
+void finished() {
+    printf("FINIHSED!!!\n");
+}
 
 TestScene::TestScene() : Scene() {
     this->vectorMan = new VectorMan();
@@ -31,11 +40,17 @@ void TestScene::onEnter() {
     ScaleToAction *scaleToAction = new ScaleToAction::ScaleToAction(2.0, 3);
     actions->push_back(scaleToAction);
     
+    CallFuncAction *callFunc = new CallFuncAction::CallFuncAction(&halfWay);
+    actions->push_back(callFunc);
+    
     moveToAction = new MoveToAction::MoveToAction(2, PointMake(0, 0, 0));
     actions->push_back(moveToAction);
     
     scaleToAction = new ScaleToAction::ScaleToAction(2.0, 1);
     actions->push_back(scaleToAction);
+    
+    callFunc = new CallFuncAction::CallFuncAction(&finished);
+    actions->push_back(callFunc);
     
 //    SpawnAction *spawnAction = new SpawnAction::SpawnAction(actions);
 //    this->vectorMan->runAction(spawnAction);

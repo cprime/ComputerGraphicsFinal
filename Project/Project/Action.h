@@ -16,21 +16,27 @@ class Node;
 
 class Action {
 public:
+    Action();
     Action(float duration);
     
+    int get_tag();
+    float get_duration();
+    float get_elapsed();
+    Node *get_target();
+    bool isFinished();
+    
     virtual void startWithTarget(Node *node);
-    virtual void finish();
-    virtual bool isDone();
-    bool isFinished;
-    
-    void tick(float dt);
+    virtual void step(float dt);
     virtual void update(float t);
+    virtual void finish();
     
-    int tag;
-    float duration;
-    float elapsed;
-protected:
-    Node *target;
+private:
+    int _tag;
+    float _duration;
+    float _elapsed;
+    bool _finished;
+    
+    Node *_target;
 };
 
 #endif /* defined(__Project__Action__) */
