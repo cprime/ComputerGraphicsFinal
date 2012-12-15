@@ -11,6 +11,7 @@
 #import "MoveToAction.h"
 #import "ScaleToAction.h"
 #import "SpawnAction.h"
+#import "RotateToAction.h"
 #import "SequenceAction.h"
 #import "CallFuncAction.h"
 
@@ -25,6 +26,9 @@ void finished() {
 TestScene::TestScene() : Scene() {
     this->vectorMan = new VectorMan();
     this->vectorMan->set_position(PointMake(0, 0, 0));
+//    this->vectorMan->set_angleX(30.0);
+//    this->vectorMan->set_angleY(45.0);
+//    this->vectorMan->set_angleZ(-30.0);
     this->addChild(this->vectorMan);
 }
 
@@ -51,6 +55,12 @@ void TestScene::onEnter() {
     
     callFunc = new CallFuncAction::CallFuncAction(&finished);
     actions->push_back(callFunc);
+    
+    RotateToAction *rotateAction = new RotateToAction(2.0, 30.0, 30.0, 0.0);
+    actions->push_back(rotateAction);
+
+    rotateAction = new RotateToAction(2.0, 0.0, 0.0, 0.0);
+    actions->push_back(rotateAction);
     
 //    SpawnAction *spawnAction = new SpawnAction::SpawnAction(actions);
 //    this->vectorMan->runAction(spawnAction);

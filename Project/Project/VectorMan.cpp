@@ -9,7 +9,6 @@
 #include "VectorMan.h"
 
 VectorMan::VectorMan() : Node() {
-    
 }
 
 void VectorMan::draw() {
@@ -18,4 +17,9 @@ void VectorMan::draw() {
     //Override this method
     glColor3f(1.0f, 1.0f, 1.0f);
     glutWireCube(2.0f); // Plot Solid Objects
+    
+    glPushMatrix();
+    glTranslatef(1.0, 1.0, 0.0);
+    glutWireCube(1.0f); // Plot Solid Objects
+    glPopMatrix();
 }

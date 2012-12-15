@@ -11,6 +11,26 @@
 #import "ActionManager.h"
 
 #pragma mark - setters and getters
+
+GLfloat Node::get_angleX() {
+    return this->angleX;
+}
+void Node::set_angleX(GLfloat angleX) {
+    this->angleX = angleX;
+}
+GLfloat Node::get_angleY() {
+    return this->angleY;
+}
+void Node::set_angleY(GLfloat angleY) {
+    this->angleY = angleY;
+}
+GLfloat Node::get_angleZ() {
+    return this->angleZ;
+}
+void Node::set_angleZ(GLfloat angleZ) {
+    this->angleZ = angleZ;
+}
+
 GLfloat Node::get_scaleX() {
     return this->scaleX;
 }
@@ -67,6 +87,10 @@ void Node::removeAction(Action *action) {
 #pragma mark - init
 
 Node::Node() {
+    this->angleX = 0;
+    this->angleY = 0;
+    this->angleZ = 0;
+    
     this->scaleX = 1;
     this->scaleY = 1;
     this->scaleZ = 1;
@@ -95,6 +119,12 @@ void Node::removeFromParent() {
 
 #pragma mark - drawing
 void Node::transform() {
+    if(this->angleX != 0 || this->angleY != 0 || this->angleZ != 0) {
+        glRotatef(this->angleX, 1.0, 0.0, 0.0);
+        glRotatef(this->angleY, 0.0, 1.0, 0.0);
+        glRotatef(this->angleZ, 0.0, 0.0, 1.0);
+    }
+    
     if(!PointEqualToPoint(this->position, PointZero)) {
         glTranslatef(this->position.x, this->position.y, this->position.z);
     }

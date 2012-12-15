@@ -20,6 +20,7 @@ class Action;
 
 class Node {
     
+    GLfloat angleX, angleY, angleZ;
     GLfloat scaleX, scaleY, scaleZ;
     Point position;
     
@@ -33,6 +34,15 @@ protected:
     virtual void draw();
     
 public:
+    GLfloat get_angleX();
+    void set_angleX(GLfloat angleX);
+    
+    GLfloat get_angleY();
+    void set_angleY(GLfloat angleY);
+    
+    GLfloat get_angleZ();
+    void set_angleZ(GLfloat angleZ);
+    
     GLfloat get_scaleX();
     void set_scaleX(GLfloat scaleX);
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E600A5F11674FF420078C898 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5EF1674FF420078C898 /* Scene.cpp */; };
 		E600A5F7167534C10078C898 /* MoveToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5F5167534C10078C898 /* MoveToAction.cpp */; };
+		E644D9F4167CEA0D00FDA83D /* RotateToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9F2167CEA0D00FDA83D /* RotateToAction.cpp */; };
 		E647621C166FF8C5004765BC /* KeyboardHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E647621A166FF8C5004765BC /* KeyboardHandler.cpp */; };
 		E6476220167011EE004765BC /* ActionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E647621E167011EE004765BC /* ActionManager.cpp */; };
 		E654C078167A80FB00E867AE /* CallFuncAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E654C076167A80FA00E867AE /* CallFuncAction.cpp */; };
@@ -46,6 +47,8 @@
 		E600A5F01674FF420078C898 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		E600A5F5167534C10078C898 /* MoveToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MoveToAction.cpp; sourceTree = "<group>"; };
 		E600A5F6167534C10078C898 /* MoveToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveToAction.h; sourceTree = "<group>"; };
+		E644D9F2167CEA0D00FDA83D /* RotateToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RotateToAction.cpp; sourceTree = "<group>"; };
+		E644D9F3167CEA0D00FDA83D /* RotateToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateToAction.h; sourceTree = "<group>"; };
 		E647621A166FF8C5004765BC /* KeyboardHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KeyboardHandler.cpp; sourceTree = "<group>"; };
 		E647621B166FF8C5004765BC /* KeyboardHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardHandler.h; sourceTree = "<group>"; };
 		E647621E167011EE004765BC /* ActionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionManager.cpp; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 				E600A5F5167534C10078C898 /* MoveToAction.cpp */,
 				E69315CA1676C37E003F1EF5 /* ScaleToAction.h */,
 				E69315C91676C37E003F1EF5 /* ScaleToAction.cpp */,
+				E644D9F3167CEA0D00FDA83D /* RotateToAction.h */,
+				E644D9F2167CEA0D00FDA83D /* RotateToAction.cpp */,
 				E6A01F2F1677FFF500677105 /* SequenceAction.h */,
 				E6A01F2E1677FFF500677105 /* SequenceAction.cpp */,
 				E693F7AB167969CD005DBE7F /* SpawnAction.h */,
@@ -230,6 +235,7 @@
 				E6A01F301677FFF500677105 /* SequenceAction.cpp in Sources */,
 				E693F7AC167969CD005DBE7F /* SpawnAction.cpp in Sources */,
 				E654C078167A80FB00E867AE /* CallFuncAction.cpp in Sources */,
+				E644D9F4167CEA0D00FDA83D /* RotateToAction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
