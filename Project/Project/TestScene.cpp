@@ -27,8 +27,7 @@ TestScene::TestScene() : Scene() {
     this->vectorMan = new MinerMan();
     this->vectorMan->set_position(PointMake(0, 0, 0));
 //    this->vectorMan->set_angleX(30.0);
-//    this->vectorMan->set_angleY(45.0);
-//    this->vectorMan->set_angleZ(-30.0);
+    this->vectorMan->set_angleY(-45.0);
     this->addChild(this->vectorMan);
 }
 

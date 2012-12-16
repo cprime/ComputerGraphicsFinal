@@ -11,12 +11,14 @@
 
 #include "Node.h"
 #import "NodeCube.h"
-#import "MinerArm.h"
-#import "MinerLeg.h"
+class MinerArm;
+class MinerLeg;
+class MinerTorso;
+class MinerHead;
 
 class MinerMan : public Node {
-    NodeCube *torso;
-    NodeCube *head;
+    MinerTorso *torso;
+    MinerHead *head;
     MinerArm *leftArm;
     MinerArm *rightArm;
     MinerLeg *leftLeg;
@@ -26,6 +28,30 @@ public:
     void draw();
     
     void startWalkAnimation();
+};
+
+class MinerArm : public Node {
+public:
+    MinerArm();
+    void draw();
+};
+
+class MinerLeg : public Node {
+public:
+    MinerLeg();
+    void draw();
+};
+
+class MinerTorso : public Node {
+public:
+    MinerTorso();
+    void draw();
+};
+
+class MinerHead : public Node {
+public:
+    MinerHead();
+    void draw();
 };
 
 #endif /* defined(__Project__MinerMan__) */
