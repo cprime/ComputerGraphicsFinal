@@ -1,17 +1,17 @@
 //
-//  VectorMan.cpp
+//  MinerMan.cpp
 //  Project
 //
 //  Created by Colden Prime on 12/10/12.
 //  Copyright (c) 2012 IntrepidPursuits. All rights reserved.
 //
 
-#include "VectorMan.h"
+#include "MinerMan.h"
 #import "RotateToAction.h"
 #import "SequenceAction.h"
 #import "RepeatAction.h"
 
-VectorMan::VectorMan() : Node() {
+MinerMan::MinerMan() : Node() {
     
     this->head = new NodeCube();
     this->head->set_color(ColorMake(1.0, 1.0, 1.0));
@@ -31,38 +31,22 @@ VectorMan::VectorMan() : Node() {
     this->torso->set_anchorPoint(PointMake(.5, .5, .5));
     this->addChild(this->torso);
     
-    this->leftArm = new NodeCube();
-    this->leftArm->set_color(ColorMake(0.0, 1.0, 0.0));
-    this->leftArm->set_scaleX(2);
-    this->leftArm->set_scaleY(6);
-    this->leftArm->set_scaleZ(2);
+    this->leftArm = new MinerArm();
     this->leftArm->set_position(PointMake(0, 9, 3.0));
     this->leftArm->set_anchorPoint(PointMake(0.5, .833, 0.5));
     this->addChild(this->leftArm);
     
-    this->rightArm = new NodeCube();
-    this->rightArm->set_color(ColorMake(1.0, 0.0, 0.0));
-    this->rightArm->set_scaleX(2);
-    this->rightArm->set_scaleY(6);
-    this->rightArm->set_scaleZ(2);
+    this->rightArm = new MinerArm();
     this->rightArm->set_position(PointMake(0, 9, -3.0));
     this->rightArm->set_anchorPoint(PointMake(0.5, .833, 0.5));
     this->addChild(this->rightArm);
     
-    this->leftLeg = new NodeCube();
-    this->leftLeg->set_color(ColorMake(0.0, 1.0, 1.0));
-    this->leftLeg->set_scaleX(2);
-    this->leftLeg->set_scaleY(5);
-    this->leftLeg->set_scaleZ(2);
+    this->leftLeg = new MinerLeg();
     this->leftLeg->set_position(PointMake(0, 5, 1.0));
     this->leftLeg->set_anchorPoint(PointMake(0.5, 1.0, 0.5));
     this->addChild(this->leftLeg);
     
-    this->rightLeg = new NodeCube();
-    this->rightLeg->set_color(ColorMake(0.0, 0.0, 1.0));
-    this->rightLeg->set_scaleX(2);
-    this->rightLeg->set_scaleY(5);
-    this->rightLeg->set_scaleZ(2);
+    this->rightLeg = new MinerLeg();
     this->rightLeg->set_position(PointMake(0, 5, -1.0));
     this->rightLeg->set_anchorPoint(PointMake(.5, 1.0, .5));
     this->addChild(this->rightLeg);
@@ -71,11 +55,11 @@ VectorMan::VectorMan() : Node() {
     this->set_contentSize(SizeMake(12, 12, 12));
 }
 
-void VectorMan::draw() {
+void MinerMan::draw() {
     Node::draw();
 }
 
-void VectorMan::startWalkAnimation() {
+void MinerMan::startWalkAnimation() {
     std::vector<Action *> *actions;
     RotateToAction *rotateAction;
     SequenceAction *sequenceAction;

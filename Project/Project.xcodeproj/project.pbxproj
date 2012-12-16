@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E600A5F11674FF420078C898 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5EF1674FF420078C898 /* Scene.cpp */; };
 		E600A5F7167534C10078C898 /* MoveToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E600A5F5167534C10078C898 /* MoveToAction.cpp */; };
+		E62482F7167E0836004E25A6 /* MinerArm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E62482F5167E0836004E25A6 /* MinerArm.cpp */; };
+		E62482FA167E22DB004E25A6 /* MinerLeg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E62482F8167E22DA004E25A6 /* MinerLeg.cpp */; };
 		E644D9F4167CEA0D00FDA83D /* RotateToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9F2167CEA0D00FDA83D /* RotateToAction.cpp */; };
 		E644D9F8167CEFF600FDA83D /* NodeCube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9F6167CEFF600FDA83D /* NodeCube.cpp */; };
 		E644D9FE167CFF3D00FDA83D /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E644D9FC167CFF3C00FDA83D /* Color.cpp */; };
@@ -24,7 +26,7 @@
 		E68E9A93167D41B8000A691C /* RepeatAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E68E9A91167D41B8000A691C /* RepeatAction.cpp */; };
 		E68EAF31166ECFBF00258D6E /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E68EAF2F166ECFBF00258D6E /* Director.cpp */; };
 		E69315C41676AC52003F1EF5 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C21676AC52003F1EF5 /* TestScene.cpp */; };
-		E69315C81676AD2D003F1EF5 /* VectorMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C61676AD2D003F1EF5 /* VectorMan.cpp */; };
+		E69315C81676AD2D003F1EF5 /* MinerMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C61676AD2D003F1EF5 /* MinerMan.cpp */; };
 		E69315CB1676C37E003F1EF5 /* ScaleToAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C91676C37E003F1EF5 /* ScaleToAction.cpp */; };
 		E693F7AC167969CD005DBE7F /* SpawnAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E693F7AA167969CD005DBE7F /* SpawnAction.cpp */; };
 		E6A01F301677FFF500677105 /* SequenceAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E6A01F2E1677FFF500677105 /* SequenceAction.cpp */; };
@@ -51,6 +53,10 @@
 		E600A5F01674FF420078C898 /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
 		E600A5F5167534C10078C898 /* MoveToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MoveToAction.cpp; sourceTree = "<group>"; };
 		E600A5F6167534C10078C898 /* MoveToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveToAction.h; sourceTree = "<group>"; };
+		E62482F5167E0836004E25A6 /* MinerArm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinerArm.cpp; sourceTree = "<group>"; };
+		E62482F6167E0836004E25A6 /* MinerArm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinerArm.h; sourceTree = "<group>"; };
+		E62482F8167E22DA004E25A6 /* MinerLeg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinerLeg.cpp; sourceTree = "<group>"; };
+		E62482F9167E22DB004E25A6 /* MinerLeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinerLeg.h; sourceTree = "<group>"; };
 		E644D9F2167CEA0D00FDA83D /* RotateToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RotateToAction.cpp; sourceTree = "<group>"; };
 		E644D9F3167CEA0D00FDA83D /* RotateToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateToAction.h; sourceTree = "<group>"; };
 		E644D9F6167CEFF600FDA83D /* NodeCube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NodeCube.cpp; sourceTree = "<group>"; };
@@ -77,8 +83,8 @@
 		E68EAF30166ECFBF00258D6E /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
 		E69315C21676AC52003F1EF5 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene.cpp; sourceTree = "<group>"; };
 		E69315C31676AC52003F1EF5 /* TestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestScene.h; sourceTree = "<group>"; };
-		E69315C61676AD2D003F1EF5 /* VectorMan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorMan.cpp; sourceTree = "<group>"; };
-		E69315C71676AD2D003F1EF5 /* VectorMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VectorMan.h; sourceTree = "<group>"; };
+		E69315C61676AD2D003F1EF5 /* MinerMan.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MinerMan.cpp; sourceTree = "<group>"; };
+		E69315C71676AD2D003F1EF5 /* MinerMan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MinerMan.h; sourceTree = "<group>"; };
 		E69315C91676C37E003F1EF5 /* ScaleToAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScaleToAction.cpp; sourceTree = "<group>"; };
 		E69315CA1676C37E003F1EF5 /* ScaleToAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleToAction.h; sourceTree = "<group>"; };
 		E693F7AA167969CD005DBE7F /* SpawnAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpawnAction.cpp; sourceTree = "<group>"; };
@@ -123,8 +129,12 @@
 		E644D9F5167CED7100FDA83D /* VectorMan */ = {
 			isa = PBXGroup;
 			children = (
-				E69315C71676AD2D003F1EF5 /* VectorMan.h */,
-				E69315C61676AD2D003F1EF5 /* VectorMan.cpp */,
+				E69315C71676AD2D003F1EF5 /* MinerMan.h */,
+				E69315C61676AD2D003F1EF5 /* MinerMan.cpp */,
+				E62482F6167E0836004E25A6 /* MinerArm.h */,
+				E62482F5167E0836004E25A6 /* MinerArm.cpp */,
+				E62482F9167E22DB004E25A6 /* MinerLeg.h */,
+				E62482F8167E22DA004E25A6 /* MinerLeg.cpp */,
 			);
 			name = VectorMan;
 			sourceTree = "<group>";
@@ -258,7 +268,7 @@
 				E600A5F11674FF420078C898 /* Scene.cpp in Sources */,
 				E600A5F7167534C10078C898 /* MoveToAction.cpp in Sources */,
 				E69315C41676AC52003F1EF5 /* TestScene.cpp in Sources */,
-				E69315C81676AD2D003F1EF5 /* VectorMan.cpp in Sources */,
+				E69315C81676AD2D003F1EF5 /* MinerMan.cpp in Sources */,
 				E69315CB1676C37E003F1EF5 /* ScaleToAction.cpp in Sources */,
 				E6A01F301677FFF500677105 /* SequenceAction.cpp in Sources */,
 				E693F7AC167969CD005DBE7F /* SpawnAction.cpp in Sources */,
@@ -268,6 +278,8 @@
 				E644D9FE167CFF3D00FDA83D /* Color.cpp in Sources */,
 				E644DA01167D0EEE00FDA83D /* Size.cpp in Sources */,
 				E68E9A93167D41B8000A691C /* RepeatAction.cpp in Sources */,
+				E62482F7167E0836004E25A6 /* MinerArm.cpp in Sources */,
+				E62482FA167E22DB004E25A6 /* MinerLeg.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

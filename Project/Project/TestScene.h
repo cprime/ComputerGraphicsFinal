@@ -11,10 +11,10 @@
 
 #import "Scene.h"
 
-class VectorMan;
+class MinerMan;
 
 class TestScene : public Scene {
-    VectorMan *vectorMan;
+    MinerMan *vectorMan;
 public:
     TestScene();
     void onEnter();
