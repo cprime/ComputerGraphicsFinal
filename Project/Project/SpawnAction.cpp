@@ -39,6 +39,8 @@ void SpawnAction::startWithTarget(Node *node) {
 }
 
 void SpawnAction::update(float t) {
+    Action::update(t);
+    
     std::vector<Action *>::iterator actionIt = actions->begin();
     for( ; actionIt != actions->end(); ++actionIt) {
         Action *action = *actionIt;

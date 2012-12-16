@@ -11,7 +11,6 @@
 
 #include "Node.h"
 #import "NodeCube.h"
-#import "ArmNode.h"
 
 class VectorMan : public Node {
     NodeCube *torso;

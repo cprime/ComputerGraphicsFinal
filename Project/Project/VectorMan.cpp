@@ -9,6 +9,7 @@
 #include "VectorMan.h"
 #import "RotateToAction.h"
 #import "SequenceAction.h"
+#import "RepeatAction.h"
 
 VectorMan::VectorMan() : Node() {
     
@@ -75,75 +76,73 @@ void VectorMan::draw() {
 }
 
 void VectorMan::startWalkAnimation() {
+    std::vector<Action *> *actions;
+    RotateToAction *rotateAction;
+    SequenceAction *sequenceAction;
+    RepeatAction *repeatAction;
     
-    std::vector<Action *> *actions = new std::vector<Action *>;
+    float legSpeed = .75;
+    
+    actions = new std::vector<Action *>;
 
-    RotateToAction *rotateAction = new RotateToAction(1.0, 0.0, 0.0, 30.0);
-    actions->push_back(rotateAction);
-
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, -30.0);
-    actions->push_back(rotateAction);
-    
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, 30.0);
-    actions->push_back(rotateAction);
-    
-    rotateAction = new RotateToAction(1.0, 0.0, 0.0, 0.0);
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, 30.0);
     actions->push_back(rotateAction);
 
-    SequenceAction *sequenceAction = new SequenceAction::SequenceAction(actions);
-    this->leftLeg->runAction(sequenceAction);
+    rotateAction = new RotateToAction(legSpeed, 0.0, 0.0, -30.0);
+    actions->push_back(rotateAction);
+    
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, 0.0);
+    actions->push_back(rotateAction);
+
+    sequenceAction = new SequenceAction::SequenceAction(actions);
+    repeatAction = new RepeatAction::RepeatAction(sequenceAction, 0);
+    this->leftLeg->runAction(repeatAction);
     
     actions = new std::vector<Action *>;
     
-    rotateAction = new RotateToAction(1.0, 0.0, 0.0, -30.0);
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, -30.0);
     actions->push_back(rotateAction);
     
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, 30.0);
+    rotateAction = new RotateToAction(legSpeed, 0.0, 0.0, 30.0);
     actions->push_back(rotateAction);
     
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, -30.0);
-    actions->push_back(rotateAction);
-    
-    rotateAction = new RotateToAction(1.0, 0.0, 0.0, 0.0);
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, 0.0);
     actions->push_back(rotateAction);
     
     sequenceAction = new SequenceAction::SequenceAction(actions);
-    this->rightLeg->runAction(sequenceAction);
+    repeatAction = new RepeatAction::RepeatAction(sequenceAction, 0);
+    this->rightLeg->runAction(repeatAction);
     
-    ///////////////////////////////
+    //arms
     actions = new std::vector<Action *>;
     
-    rotateAction = new RotateToAction(1.0, 0.0, 0.0, 30.0);
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, 30.0);
     actions->push_back(rotateAction);
     
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, -30.0);
+    rotateAction = new RotateToAction(legSpeed, 0.0, 0.0, -30.0);
     actions->push_back(rotateAction);
     
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, 30.0);
-    actions->push_back(rotateAction);
-    
-    rotateAction = new RotateToAction(1.0, 0.0, 0.0, 0.0);
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, 0.0);
     actions->push_back(rotateAction);
     
     sequenceAction = new SequenceAction::SequenceAction(actions);
-    this->rightArm->runAction(sequenceAction);
+    repeatAction = new RepeatAction::RepeatAction(sequenceAction, 0);
+    this->rightArm->runAction(repeatAction);
     
     actions = new std::vector<Action *>;
     
-    rotateAction = new RotateToAction(1.0, 0.0, 0.0, -30.0);
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, -30.0);
     actions->push_back(rotateAction);
     
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, 30.0);
+    rotateAction = new RotateToAction(legSpeed, 0.0, 0.0, 30.0);
     actions->push_back(rotateAction);
     
-    rotateAction = new RotateToAction(2.0, 0.0, 0.0, -30.0);
-    actions->push_back(rotateAction);
-    
-    rotateAction = new RotateToAction(1.0, 0.0, 0.0, 0.0);
+    rotateAction = new RotateToAction(legSpeed / 2.0, 0.0, 0.0, 0.0);
     actions->push_back(rotateAction);
     
     sequenceAction = new SequenceAction::SequenceAction(actions);
-    this->leftArm->runAction(sequenceAction);
+    repeatAction = new RepeatAction::RepeatAction(sequenceAction, 0);
+    this->leftArm->runAction(repeatAction);
 }
 
 

@@ -44,6 +44,7 @@ bool Action::isFinished() {
 
 void Action::startWithTarget(Node *node) {
     _target = node;
+    _elapsed = 0;
     _finished = false;
 }
 

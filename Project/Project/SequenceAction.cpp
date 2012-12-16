@@ -33,6 +33,8 @@ void SequenceAction::startWithTarget(Node *node) {
 }
 
 void SequenceAction::update(float t) {
+    Action::update(t);
+    
     if(!this->actions->empty()) {
 
         for( ; this->current != this->actions->size(); ) {
@@ -52,6 +54,7 @@ void SequenceAction::update(float t) {
                 this->finishedElapsed += action->get_duration();
                 this->current++;
                 this->currentStarted = false;
+            
                 continue;
             } else {
                 break;
