@@ -44,6 +44,7 @@ bool Action::isFinished() {
 
 void Action::startWithTarget(Node *node) {
     _target = node;
+    _finished = false;
 }
 
 void Action::step(float dt) {

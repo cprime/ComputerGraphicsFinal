@@ -12,7 +12,9 @@
 #import <GLUT/GLUT.h>
 #import <vector>
 #import "Point.h"
-#include "Color.h"
+#import "Color.h"
+#import "Size.h"
+
 
 using namespace std;
 
@@ -24,6 +26,8 @@ class Node {
     GLfloat scaleX, scaleY, scaleZ;
     Point position;
     Color color;
+    Size contentSize;
+    Point anchorPoint;
     
     Node *parent;
     vector<Node *> *children;
@@ -61,6 +65,12 @@ public:
     
     Color get_color();
     void set_color(Color color);
+    
+    Size get_contentSize();
+    void set_contentSize(Size contentSize);
+    
+    Point get_anchorPoint();
+    void set_anchorPoint(Point anchorPoint);
     
     Node * get_parent();
     vector<Node *> * get_children();

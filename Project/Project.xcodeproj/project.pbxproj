@@ -22,6 +22,7 @@
 		E682441F166812EA0081973B /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441C166812EA0081973B /* GLKit.framework */; };
 		E6824420166812EA0081973B /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441D166812EA0081973B /* GLUT.framework */; };
 		E6824421166812EA0081973B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E682441E166812EA0081973B /* OpenGL.framework */; };
+		E68E9A93167D41B8000A691C /* RepeatAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E68E9A91167D41B8000A691C /* RepeatAction.cpp */; };
 		E68EAF31166ECFBF00258D6E /* Director.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E68EAF2F166ECFBF00258D6E /* Director.cpp */; };
 		E69315C41676AC52003F1EF5 /* TestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C21676AC52003F1EF5 /* TestScene.cpp */; };
 		E69315C81676AD2D003F1EF5 /* VectorMan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E69315C61676AD2D003F1EF5 /* VectorMan.cpp */; };
@@ -73,6 +74,8 @@
 		E682441C166812EA0081973B /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		E682441D166812EA0081973B /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		E682441E166812EA0081973B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		E68E9A91167D41B8000A691C /* RepeatAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RepeatAction.cpp; sourceTree = "<group>"; };
+		E68E9A92167D41B8000A691C /* RepeatAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepeatAction.h; sourceTree = "<group>"; };
 		E68EAF2F166ECFBF00258D6E /* Director.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Director.cpp; sourceTree = "<group>"; };
 		E68EAF30166ECFBF00258D6E /* Director.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Director.h; sourceTree = "<group>"; };
 		E69315C21676AC52003F1EF5 /* TestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestScene.cpp; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 				E6A01F2E1677FFF500677105 /* SequenceAction.cpp */,
 				E693F7AB167969CD005DBE7F /* SpawnAction.h */,
 				E693F7AA167969CD005DBE7F /* SpawnAction.cpp */,
+				E68E9A92167D41B8000A691C /* RepeatAction.h */,
+				E68E9A91167D41B8000A691C /* RepeatAction.cpp */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				E644D9FB167CF53700FDA83D /* ArmNode.cpp in Sources */,
 				E644D9FE167CFF3D00FDA83D /* Color.cpp in Sources */,
 				E644DA01167D0EEE00FDA83D /* Size.cpp in Sources */,
+				E68E9A93167D41B8000A691C /* RepeatAction.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

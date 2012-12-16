@@ -70,6 +70,20 @@ void Node::set_color(Color color) {
     this->color = color;
 }
 
+Size Node::get_contentSize() {
+    return this->contentSize;
+}
+void Node::set_contentSize(Size contentSize) {
+    this->contentSize = contentSize;
+}
+
+Point Node::get_anchorPoint() {
+    return this->anchorPoint;
+}
+void Node::set_anchorPoint(Point anchorPoint) {
+    this->anchorPoint = anchorPoint;
+}
+
 Node * Node::get_parent() {
     return this->parent;
 }
@@ -103,6 +117,8 @@ Node::Node() {
     
     this->position = PointZero;
     this->color = ColorWhite;
+    this->contentSize = SizeZero;
+    this->anchorPoint = PointMake(.5, .5, .5);
     
     this->actions = new vector<Action *>();
     this->children = new vector<Node *>();
@@ -126,7 +142,6 @@ void Node::removeFromParent() {
 
 #pragma mark - drawing
 void Node::transform() {
-    
     if(!PointEqualToPoint(this->position, PointZero)) {
         glTranslatef(this->position.x, this->position.y, this->position.z);
     }
@@ -140,6 +155,11 @@ void Node::transform() {
     if(this->scaleX != 1 || this->scaleY != 1 || this->scaleZ != 1) {
         glScalef(this->scaleX, this->scaleY, this->scaleZ);
     }
+    
+    Point scaledAnchorPoint = PointMake(this->contentSize.width * this->anchorPoint.x,
+                                        this->contentSize.height * this->anchorPoint.y,
+                                        this->contentSize.depth * this->anchorPoint.z);
+    glTranslatef(-scaledAnchorPoint.x, -scaledAnchorPoint.y, -scaledAnchorPoint.z);
 }
 
 void Node::draw() {
