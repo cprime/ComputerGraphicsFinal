@@ -17,14 +17,20 @@ class MinerTorso;
 class MinerHead;
 
 class MinerMan : public Node {
+public:
     MinerTorso *torso;
     MinerHead *head;
     MinerArm *leftArm;
     MinerArm *rightArm;
     MinerLeg *leftLeg;
     MinerLeg *rightLeg;
-public:
+    
+    bool queuedStep;
+    bool walking;
+    bool lastStepLeft;
+    
     MinerMan();
+    ~MinerMan();
     void draw();
     
     void startWalkAnimation();

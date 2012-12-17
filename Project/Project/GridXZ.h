@@ -9,6 +9,12 @@
 #ifndef __Project__GridXZ__
 #define __Project__GridXZ__
 
-#include <iostream>
+#include "Node.h"
+
+class GridXZ : public Node {
+public:
+    GridXZ();
+    void draw();
+};
 
 #endif /* defined(__Project__GridXZ__) */

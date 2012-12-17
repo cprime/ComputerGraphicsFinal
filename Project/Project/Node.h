@@ -11,6 +11,7 @@
 
 #import <GLUT/GLUT.h>
 #import <vector>
+#import <iostream>
 #import "Point.h"
 #import "Color.h"
 #import "Size.h"
@@ -80,6 +81,7 @@ public:
     void removeAction(Action *);
     
     Node();
+    ~Node();
     virtual void visit();
     
     void addChild(Node *node);

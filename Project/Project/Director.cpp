@@ -31,10 +31,6 @@ Director & Director::operator= (const Director & other)
     return *this;
 }
 
-KeyboardHandler * Director::get_keyboardHandler() {
-    return this->keyboardHandler;
-}
-
 void Director::calculateDeltaTime()
 {
 	struct timeval now;
@@ -66,11 +62,17 @@ void Director::calculateDeltaTime()
 
 Director::Director()
 {
-    this->keyboardHandler = new KeyboardHandler();
-    
     this->runningScene = new Scene();
     
     this->isFirstTick = true;
+    
+    KeyboardHandler::Instance()->AddListener(this, 'z');
+    KeyboardHandler::Instance()->AddListener(this, 'x');
+    KeyboardHandler::Instance()->AddListener(this, 'c');
+    KeyboardHandler::Instance()->AddListener(this, 'Z');
+    KeyboardHandler::Instance()->AddListener(this, 'X');
+    KeyboardHandler::Instance()->AddListener(this, 'C');
+    KeyboardHandler::Instance()->AddListener(this, (char)27);
 }
 
 void Director::runScene(Scene *scene) {
@@ -89,4 +91,32 @@ void Director::update() {
     this->runningScene->visit();
     
     glPopMatrix();
+}
+
+void Director::KeyPressed(void* handler, char key, bool down) {
+    if(down) {
+        switch (key) {
+            case 'z':
+                glRotatef(15.,1.0,0.0,0.0);
+                break;
+            case 'x':
+                glRotatef(15.,0.0,1.0,0.0);
+                break;
+            case 'c':
+                glRotatef(15.,0.0,0.0,1.0);
+                break;
+            case 'Z':
+                glRotatef(-15.,1.0,0.0,0.0);
+                break;
+            case 'X':
+                glRotatef(-15.,0.0,1.0,0.0);
+                break;
+            case 'C':
+                glRotatef(-15.,0.0,0.0,1.0);
+                break;
+            case 27:
+                exit(0);
+                break;
+        }
+    }
 }

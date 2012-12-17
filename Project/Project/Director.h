@@ -15,16 +15,15 @@
 #import "KeyboardHandler.h"
 #import "Scene.h"
 
-class Director {
+class Director : public KeyboardListener {
 public:
     static Director *SharedDirector();
     
-    KeyboardHandler * get_keyboardHandler();
-    
     void runScene(Scene *scene);
     void update();
+    
+    void KeyPressed(void* handler, char key, bool down);
 private:
-    KeyboardHandler *keyboardHandler;
     Scene *runningScene;
     
     bool isFirstTick;

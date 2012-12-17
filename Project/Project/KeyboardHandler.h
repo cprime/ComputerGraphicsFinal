@@ -9,14 +9,28 @@
 #ifndef __Project__KeyboardHandler__
 #define __Project__KeyboardHandler__
 
-#include <vector>
+#include <iostream>
 #include <map>
+#include <set>
+#include "KeyboardListener.h"
 
 using namespace std;
 
 class KeyboardHandler {
 public:
-    void keyboardClicked(unsigned char key);
+    static KeyboardHandler* Instance();
+    
+    void KeyPressed(char key, bool down);
+    void AddListener(KeyboardListener* listener, char key);
+    void RemoveListener(KeyboardListener* listener, char key);
+    void RemoveListener(KeyboardListener* listener);
+    
+protected:
+    KeyboardHandler(); // CTor
+    
+private:
+    static KeyboardHandler* singletonInstance;
+    std::map<char, std::set<KeyboardListener*>> keyboardListeners;
 };
 
 #endif /* defined(__Project__KeyboardHandler__) */

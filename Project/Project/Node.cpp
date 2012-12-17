@@ -124,6 +124,10 @@ Node::Node() {
     this->children = new vector<Node *>();
     this->parent = NULL;
 }
+Node::~Node() {
+    delete this->children;
+    delete this->actions;
+}
 
 void Node::addChild(Node *node) {
     if(node) {

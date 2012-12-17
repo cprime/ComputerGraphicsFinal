@@ -10,14 +10,24 @@
 #define __Project__TestScene__
 
 #import "Scene.h"
+#import "KeyboardHandler.h"
+#import "GridXZ.h"
 
 class MinerMan;
 
-class TestScene : public Scene {
-    MinerMan *vectorMan;
+class TestScene : public Scene, public KeyboardListener {
+    GridXZ *grid;
+    MinerMan *minerMan;
+    
+    Point manPosition;
+    float manRotation;
+    
+    void makeStep();
 public:
     TestScene();
     void onEnter();
+    
+    void KeyPressed(void* handler, char key, bool down);
 };
 
 #endif /* defined(__Project__TestScene__) */

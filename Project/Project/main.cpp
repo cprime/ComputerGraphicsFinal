@@ -8,6 +8,7 @@
 
 #include <GLUT/GLUT.h>
 #import "Director.h"
+#import "KeyboardHandler.h"
 #import "TestScene.h"
 
 void display(void) {
@@ -22,11 +23,14 @@ void reshape(int w, int h) {
 	gluPerspective(60, (GLfloat) w/(GLfloat) h, 1.0, 80.0);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	gluLookAt(0, 0, 30, 0, 0, 0, 0, 1, 0);
+	gluLookAt(-20, 20, 0, 0, 0, 0, 0, 1, 0);
 }
 /* Rotate about x-axis when "x" typed; rotate about y-axis when "y" typed; "i" returns torus to original view */
 void keyboard(unsigned char key, int x, int y) {
-    Director::SharedDirector()->get_keyboardHandler()->keyboardClicked(key);
+    KeyboardHandler::Instance()->KeyPressed(key, true);
+}
+void keyboardUp(unsigned char key, int x, int y) {
+    KeyboardHandler::Instance()->KeyPressed(key, false);
 }
 int main(int argc, char **argv) {
 	glutInitWindowSize(950, 700);
@@ -36,6 +40,7 @@ int main(int argc, char **argv) {
 
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
+    glutKeyboardUpFunc(keyboardUp);
 	glutDisplayFunc(display);
     glutIdleFunc(display);
 	
@@ -67,6 +72,7 @@ int main(int argc, char **argv) {
 	glClearColor (0.0, 0.0, 0.0, 0.0);
     
     TestScene *scene = new TestScene();
+    scene->set_position(PointMake(0.0, -5., 0));
 	Director::SharedDirector()->runScene(scene);
     
 	glutMainLoop();

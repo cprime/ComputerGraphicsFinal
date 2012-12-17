@@ -12,11 +12,12 @@
 #import "Node.h"
 
 class Scene : public Node {
-    virtual void keyPressed(char key);
 public:
     Scene();
     
     virtual void onEnter();
+    
+    void draw();
 };
 
 #endif /* defined(__Project__Scene__) */

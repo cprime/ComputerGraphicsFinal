@@ -11,7 +11,7 @@
 
 class KeyboardListener {
 public:
-    virtual void KeyPressed(void* handler, char key) = 0;
+    virtual void KeyPressed(void* handler, char key, bool down) = 0;
     ~KeyboardListener() {};
 };
 

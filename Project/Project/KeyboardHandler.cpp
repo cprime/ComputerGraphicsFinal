@@ -7,29 +7,45 @@
 //
 
 #include "KeyboardHandler.h"
-#import <GLUT/GLUT.h>
 
-void KeyboardHandler::keyboardClicked(unsigned char key) {
-	switch (key) {
-        case 'z':
-        case 'Z':
-            glRotatef(30.,1.0,0.0,0.0);
-            break;
-        case 'x':
-        case 'X':
-            glRotatef(30.,0.0,1.0,0.0);
-            break;
-        case 'c':
-        case 'C':
-            glRotatef(30.,0.0,0.0,1.0);
-            break;
-        case 'i':
-        case 'I':
-            glLoadIdentity();
-            gluLookAt(0, 0, 30, 0, 0, 0, 0, 1, 0);
-            break;
-        case 27:
-            exit(0);
-            break;
-	}
+KeyboardHandler* KeyboardHandler::singletonInstance = NULL;
+
+KeyboardHandler::KeyboardHandler() {
+    /* Do whatever CTor stuff you wish */
+}
+
+KeyboardHandler* KeyboardHandler::Instance() {
+    if (singletonInstance == NULL) {
+        singletonInstance = new KeyboardHandler();
+    }
+    return singletonInstance;
+}
+
+void KeyboardHandler::KeyPressed(char key, bool down){
+    std::set<KeyboardListener*>::iterator iit;
+    
+    std::set<KeyboardListener*> keySet =this->keyboardListeners[key];
+    
+    if (keySet.empty()) return;
+    
+    for (iit=keySet.begin(); iit != keySet.end(); iit++) {
+        (*iit)->KeyPressed(this, key, down);
+    }
+}
+
+void KeyboardHandler::AddListener(KeyboardListener* listener, char key){
+    this->keyboardListeners[key].insert(listener);
+}
+
+void KeyboardHandler::RemoveListener(KeyboardListener* listener, char key){
+    this->keyboardListeners[key].erase(listener);
+}
+
+void KeyboardHandler::RemoveListener(KeyboardListener* listener){
+    std::map<char, std::set<KeyboardListener*>>::iterator iit;
+    
+    for (iit=this->keyboardListeners.begin(); iit != this->keyboardListeners.end(); iit++) {
+        (*iit).second.erase(listener);
+    }
+    
 }
