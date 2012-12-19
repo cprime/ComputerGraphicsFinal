@@ -12,6 +12,7 @@
 #import "RepeatAction.h"
 #import "CallFuncAction.h"
 #import "DelayAction.h"
+#import "MoveToAction.h"
 
 #define LegSpeed 0.25
 #define LegAngle 30.0
@@ -36,7 +37,9 @@ void halfStep(MinerMan *man) {
     
     std::vector<Action *> *actions;
     RotateToAction *rotateAction;
+    MoveToAction *moveAction;
     SequenceAction *sequenceAction;
+    CallFuncAction *callFunc;
     
     float leftLegAngle = -LegAngle;
     float rightArmAngle = -LegAngle;
@@ -101,10 +104,13 @@ void halfStep(MinerMan *man) {
     //man
     actions = new std::vector<Action *>;
     
-    DelayAction *delayAction = new DelayAction::DelayAction(LegSpeed * 2);
-    actions->push_back(delayAction);
+    moveAction = new MoveToAction(LegSpeed, PointMake(0.0, 1.0, 0));
+    actions->push_back(moveAction);
     
-    CallFuncAction *callFunc = new CallFuncAction::CallFuncAction(&finishedStep);
+    moveAction = new MoveToAction(LegSpeed, PointMake(0.0, 0.0, 0));
+    actions->push_back(moveAction);
+    
+    callFunc = new CallFuncAction::CallFuncAction(&finishedStep);
     actions->push_back(callFunc);
     
     sequenceAction = new SequenceAction::SequenceAction(actions);
@@ -164,19 +170,19 @@ MinerMan::~MinerMan() {
 void MinerMan::draw() {
     Node::draw();
     
-    glPushMatrix();
-    glScalef(this->get_contentSize().width, this->get_contentSize().height, this->get_contentSize().depth);
-    glTranslatef(.5, .5, .5);
-    glutWireCube(1);
-    glPopMatrix();
-    
-    glColor3f(1.0, 0.0, 0.0);
-    glBegin(GL_QUADS);
-    glVertex3f(.5, 0, .5);
-    glVertex3f(-.5, 0, .5);
-    glVertex3f(-.5, 0, -.5);
-    glVertex3f(.5, 0, -.5);
-    glEnd();
+//    glPushMatrix();
+//    glScalef(this->get_contentSize().width, this->get_contentSize().height, this->get_contentSize().depth);
+//    glTranslatef(.5, .5, .5);
+//    glutWireCube(1);
+//    glPopMatrix();
+//    
+//    glColor3f(1.0, 0.0, 0.0);
+//    glBegin(GL_QUADS);
+//    glVertex3f(.5, 0, .5);
+//    glVertex3f(-.5, 0, .5);
+//    glVertex3f(-.5, 0, -.5);
+//    glVertex3f(.5, 0, -.5);
+//    glEnd();
 }
 
 void MinerMan::startWalkAnimation() {
