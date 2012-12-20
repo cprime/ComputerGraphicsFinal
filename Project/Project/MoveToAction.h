@@ -9,8 +9,8 @@
 #ifndef __Project__MoveToAction__
 #define __Project__MoveToAction__
 
-#import "Action.h"
-#import "Point.h"
+#include "Action.h"
+#include "Point.h"
 
 class MoveToAction : public Action {
     Point origin;

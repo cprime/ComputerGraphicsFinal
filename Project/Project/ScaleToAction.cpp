@@ -7,7 +7,7 @@
 //
 
 #include "ScaleToAction.h"
-#import "Node.h"
+#include "Node.h"
 
 ScaleToAction::ScaleToAction(float duration, float destination) : Action(duration) {
     this->destinationX = destination;

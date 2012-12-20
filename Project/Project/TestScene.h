@@ -9,9 +9,9 @@
 #ifndef __Project__TestScene__
 #define __Project__TestScene__
 
-#import "Scene.h"
-#import "KeyboardHandler.h"
-#import "GridXZ.h"
+#include "Scene.h"
+#include "KeyboardHandler.h"
+#include "GridXZ.h"
 
 class MinerMan;
 

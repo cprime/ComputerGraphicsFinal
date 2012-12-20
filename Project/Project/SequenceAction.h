@@ -10,7 +10,7 @@
 #define __Project__SequenceAction__
 
 #include "Action.h"
-#import <vector>
+#include <vector>
 
 class SequenceAction : public Action {
     std::vector<Action *> *actions;

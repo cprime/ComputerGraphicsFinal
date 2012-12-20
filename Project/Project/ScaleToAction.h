@@ -9,8 +9,8 @@
 #ifndef __Project__ScaleToAction__
 #define __Project__ScaleToAction__
 
-#import "Action.h"
-#import "Point.h"
+#include "Action.h"
+#include "Point.h"
 
 class ScaleToAction : public Action {
     float originX;

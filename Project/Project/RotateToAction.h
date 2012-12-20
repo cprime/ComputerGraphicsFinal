@@ -9,8 +9,8 @@
 #ifndef __Project__RotateToAction__
 #define __Project__RotateToAction__
 
-#import "Action.h"
-#import "Point.h"
+#include "Action.h"
+#include "Point.h"
 
 class RotateToAction : public Action {
     float originX;

@@ -9,7 +9,7 @@
 #ifndef __Project__Point__
 #define __Project__Point__
 
-#import <GLUT/GLUT.h>
+#include <GLUT/GLUT.h>
 
 typedef struct {
     GLfloat x;

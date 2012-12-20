@@ -6,9 +6,9 @@
 //  Copyright (c) 2012 IntrepidPursuits. All rights reserved.
 //
 
-#import "Node.h"
-#import "Action.h"
-#import "ActionManager.h"
+#include "Node.h"
+#include "Action.h"
+#include "ActionManager.h"
 
 #pragma mark - setters and getters
 

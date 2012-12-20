@@ -7,7 +7,7 @@
 //
 
 #include "RotateToAction.h"
-#import "Node.h"
+#include "Node.h"
 
 RotateToAction::RotateToAction(float duration, float destinationX, float destinationY, float destinationZ) : Action(duration) {
     this->destinationX = destinationX;

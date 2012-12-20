@@ -9,7 +9,7 @@
 #ifndef __Project__RepeatAction__
 #define __Project__RepeatAction__
 
-#import "Action.h"
+#include "Action.h"
 
 class RepeatAction : public Action {
     int times;

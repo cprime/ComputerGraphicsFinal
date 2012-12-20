@@ -9,7 +9,7 @@
 #ifndef __Project__Scene__
 #define __Project__Scene__
 
-#import "Node.h"
+#include "Node.h"
 
 class Scene : public Node {
 public:

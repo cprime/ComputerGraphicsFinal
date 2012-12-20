@@ -7,7 +7,7 @@
 //
 
 #include "MoveToAction.h"
-#import "Node.h"
+#include "Node.h"
 
 MoveToAction::MoveToAction(float duration, Point destination) : Action(duration) {
     this->destination = destination;

@@ -11,9 +11,9 @@
 
 #include <vector>
 #include "time.h"
-#import <sys/time.h>
-#import "KeyboardHandler.h"
-#import "Scene.h"
+#include <sys/time.h>
+#include "KeyboardHandler.h"
+#include "Scene.h"
 
 class Director : public KeyboardListener {
 public:

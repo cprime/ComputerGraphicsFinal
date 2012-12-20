@@ -10,7 +10,7 @@
 #define __Project__MinerMan__
 
 #include "Node.h"
-#import "NodeCube.h"
+#include "NodeCube.h"
 class MinerArm;
 class MinerLeg;
 class MinerTorso;

@@ -7,14 +7,14 @@
 //
 
 #include "TestScene.h"
-#import "MinerMan.h"
-#import "MoveToAction.h"
-#import "ScaleToAction.h"
-#import "SpawnAction.h"
-#import "RotateToAction.h"
-#import "SequenceAction.h"
-#import "CallFuncAction.h"
-#import <math.h>
+#include "MinerMan.h"
+#include "MoveToAction.h"
+#include "ScaleToAction.h"
+#include "SpawnAction.h"
+#include "RotateToAction.h"
+#include "SequenceAction.h"
+#include "CallFuncAction.h"
+#include <math.h>
 
 #define TurnIncrement 5
 #define MoveIncrement 1

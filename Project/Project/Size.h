@@ -9,7 +9,7 @@
 #ifndef __Project__Size__
 #define __Project__Size__
 
-#import <GLUT/GLUT.h>
+#include <GLUT/GLUT.h>
 
 typedef struct {
     GLfloat width;

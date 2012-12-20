@@ -7,12 +7,12 @@
 //
 
 #include "MinerMan.h"
-#import "RotateToAction.h"
-#import "SequenceAction.h"
-#import "RepeatAction.h"
-#import "CallFuncAction.h"
-#import "DelayAction.h"
-#import "MoveToAction.h"
+#include "RotateToAction.h"
+#include "SequenceAction.h"
+#include "RepeatAction.h"
+#include "CallFuncAction.h"
+#include "DelayAction.h"
+#include "MoveToAction.h"
 
 #define LegSpeed 0.25
 #define LegAngle 30.0

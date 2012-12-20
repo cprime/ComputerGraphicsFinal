@@ -7,7 +7,7 @@
 //
 
 #include "DelayAction.h"
-#import "Node.h"
+#include "Node.h"
 
 DelayAction::DelayAction(float duration) : Action(duration) {
 }

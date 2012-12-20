@@ -7,7 +7,7 @@
 //
 
 #include "RepeatAction.h"
-#import <stdio.h>
+#include <stdio.h>
 
 RepeatAction::RepeatAction(Action *action, int timesToRepeat) : Action() {
     this->innerAction = action;

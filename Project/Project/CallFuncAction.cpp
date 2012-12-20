@@ -7,7 +7,7 @@
 //
 
 #include "CallFuncAction.h"
-#import "Node.h"
+#include "Node.h"
 
 CallFuncAction::CallFuncAction(void (*func_callback)()) : Action() {
     this->func_callback = func_callback;

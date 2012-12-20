@@ -9,12 +9,12 @@
 #ifndef __Project__Node__
 #define __Project__Node__
 
-#import <GLUT/GLUT.h>
-#import <vector>
-#import <iostream>
-#import "Point.h"
-#import "Color.h"
-#import "Size.h"
+#include <GLUT/GLUT.h>
+#include <vector>
+#include <iostream>
+#include "Point.h"
+#include "Color.h"
+#include "Size.h"
 
 
 using namespace std;

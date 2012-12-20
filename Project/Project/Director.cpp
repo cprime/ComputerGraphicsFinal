@@ -7,10 +7,10 @@
 //
 
 #include "Director.h"
-#import <GLUT/GLUT.h>
-#import <time.h>
-#import <sys/time.h>
-#import "ActionManager.h"
+#include <GLUT/GLUT.h>
+#include <time.h>
+#include <sys/time.h>
+#include "ActionManager.h"
 
 Director * Director::m_pInstance = NULL;
 

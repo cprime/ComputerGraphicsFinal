@@ -9,7 +9,7 @@
 #ifndef __Project__CallFuncAction__
 #define __Project__CallFuncAction__
 
-#import "Action.h"
+#include "Action.h"
 
 class Node;
 

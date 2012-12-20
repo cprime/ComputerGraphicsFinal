@@ -9,7 +9,7 @@
 #ifndef __Project__Color__
 #define __Project__Color__
 
-#import <GLUT/GLUT.h>
+#include <GLUT/GLUT.h>
 
 typedef struct {
     GLfloat r;

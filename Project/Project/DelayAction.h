@@ -9,7 +9,7 @@
 #ifndef __Project__DelayAction__
 #define __Project__DelayAction__
 
-#import "Action.h"
+#include "Action.h"
 
 class DelayAction : public Action {
 public:
