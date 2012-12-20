@@ -78,7 +78,7 @@ void TestScene::KeyPressed(void* handler, char key, bool down) {
         }
     }
     else {
-        
+        this->minerMan->queuedStep = false;
     }
 }
 
