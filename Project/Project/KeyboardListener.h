@@ -3,7 +3,7 @@
 //  KeyboardHandlerTestCPP
 //
 //  Created by Colden Prime on 12/11/12.
-//  Copyright (c) 2012 Colden Prime. All rights reserved.
+//  Copyright (c) 2012 IntrepidPursuits. All rights reserved.
 //
 
 #ifndef KeyboardHandlerTestCPP_KeyboardListener_h
