@@ -2,8 +2,8 @@
 //  KeyboardListener.h
 //  KeyboardHandlerTestCPP
 //
-//  Created by Glenn R. Martin on 12/11/12.
-//  Copyright (c) 2012 Glenn R. Martin. All rights reserved.
+//  Created by Colden Prime on 12/11/12.
+//  Copyright (c) 2012 Colden Prime. All rights reserved.
 //
 
 #ifndef KeyboardHandlerTestCPP_KeyboardListener_h

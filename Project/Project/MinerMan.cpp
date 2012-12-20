@@ -170,12 +170,12 @@ MinerMan::~MinerMan() {
 void MinerMan::draw() {
     Node::draw();
     
-//    glPushMatrix();
-//    glScalef(this->get_contentSize().width, this->get_contentSize().height, this->get_contentSize().depth);
-//    glTranslatef(.5, .5, .5);
-//    glutWireCube(1);
-//    glPopMatrix();
-//    
+    glPushMatrix();
+    glScalef(this->get_contentSize().width, this->get_contentSize().height, this->get_contentSize().depth);
+    glTranslatef(.5, .5, .5);
+    glutWireCube(1);
+    glPopMatrix();
+    
 //    glColor3f(1.0, 0.0, 0.0);
 //    glBegin(GL_QUADS);
 //    glVertex3f(.5, 0, .5);
